@@ -1,11 +1,11 @@
 
 export function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[250px] pt-6 pb-8">
+    <section className="relative flex flex-col items-center justify-center min-h-[220px] pt-4 pb-6">
       <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 via-white to-purple-100 opacity-70 pointer-events-none" />
-      <div className="relative z-10 flex flex-col lg:flex-row items-center gap-10 max-w-5xl w-full">
+      <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 max-w-5xl w-full">
         <img
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=facearea&w=400&q=80"
+          src="/lovable-uploads/5054563e-8f51-4e2d-b8df-22db7b1a8eda.png"
           className="w-28 h-28 object-cover rounded-full border-4 border-primary/70 shadow-md"
           alt="Portrait of Saptarshi"
         />
@@ -13,7 +13,7 @@ export function HeroSection() {
           <h1 className="text-4xl font-extrabold leading-tight tracking-tighter text-primary mb-1">
             Saptarshi — Product Aspirant Turning Curiosity Into Impact
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-3">
             I combine analytical skills, a love for discovery, and technical know-how to help teams deliver products that matter.<br />
             Let’s connect if you’re hiring, collaborating, or want to chat product!
           </p>

@@ -1,10 +1,10 @@
 
 export function AboutBlock() {
   return (
-    <section id="about" className="my-14 max-w-5xl mx-auto">
-      <div className="bg-gradient-to-br from-white via-indigo-50 to-purple-100 rounded-2xl shadow-lg border border-border p-6 flex flex-col md:flex-row items-center gap-5">
+    <section id="about" className="my-6 max-w-5xl mx-auto">
+      <div className="bg-gradient-to-br from-white via-indigo-50 to-purple-100 rounded-2xl shadow-lg border border-border p-5 flex flex-col md:flex-row items-center gap-4">
         <img
-          src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=facearea&w=240&q=80"
+          src="/lovable-uploads/5054563e-8f51-4e2d-b8df-22db7b1a8eda.png"
           className="w-24 h-24 object-cover rounded-full border-4 border-indigo-300 shadow hidden md:block"
           alt="Portrait of Saptarshi"
         />
@@ -13,10 +13,10 @@ export function AboutBlock() {
           <p className="text-base text-muted-foreground mb-1">
             I’m Saptarshi — a product aspirant passionate about solving business and user challenges through tech, data, and relentless curiosity.
           </p>
-          <p className="text-base text-muted-foreground mb-3">
-            My mission: Learn fast, contribute meaningfully, and turn ambiguity into product momentum. 
+          <p className="text-base text-muted-foreground mb-2">
+            My mission: Learn fast, contribute meaningfully, and turn ambiguity into product momentum.
           </p>
-          <ul className="list-disc ml-8 text-sm text-muted-foreground mb-3">
+          <ul className="list-disc ml-8 text-sm text-muted-foreground mb-2">
             <li>Experience across SaaS analytics and growth teams</li>
             <li>Obsessed with user journeys, data, and measurable outcomes</li>
             <li>Lifelong learner and aspiring future product manager</li>
@@ -29,7 +29,7 @@ export function AboutBlock() {
           </a>
         </div>
       </div>
-      <div className="text-center mt-8 text-xs text-muted-foreground">
+      <div className="text-center mt-5 text-xs text-muted-foreground">
         &copy; {new Date().getFullYear()} Saptarshi — Made with ❤️ for Product Careers
       </div>
     </section>

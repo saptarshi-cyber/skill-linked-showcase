@@ -23,15 +23,15 @@ export function SkillsMap({
   });
 
   return (
-    <section id="skills" className="my-10 max-w-5xl mx-auto">
+    <section id="skills" className="my-6 max-w-5xl mx-auto">
       <h2 className="text-3xl font-bold mb-1 flex items-center gap-2 text-primary">
         <Star size={22} />
         Skills Map
       </h2>
-      <p className="text-muted-foreground mb-3">
+      <p className="text-muted-foreground mb-2">
         Click any skill to spotlight where it made an impact in my work.
       </p>
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex flex-wrap gap-2 mb-5">
         {ALL_SKILLS.map((skill) => (
           <SkillTag
             key={skill}

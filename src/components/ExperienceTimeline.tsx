@@ -1,4 +1,3 @@
-
 import { SkillTag } from "./SkillTag";
 import { Briefcase } from "lucide-react";
 
@@ -64,12 +63,12 @@ export function ExperienceTimeline({
   setSelectedSkill?: (skill: string | undefined) => void;
 }) {
   return (
-    <section id="experience" className="my-10 max-w-5xl mx-auto">
+    <section id="experience" className="my-6 max-w-5xl mx-auto">
       <h2 className="text-3xl font-bold text-primary mb-1 flex items-center gap-1">
         <Briefcase className="inline mr-1" size={24} />
         Experience
       </h2>
-      <p className="text-muted-foreground mb-5">
+      <p className="text-muted-foreground mb-4">
         Click any skill to see how it mapped to real impact.
       </p>
       <div className="flex flex-col gap-5">

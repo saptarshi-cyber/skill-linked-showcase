@@ -1,3 +1,4 @@
+
 import { SkillTag } from "./SkillTag";
 import { Briefcase } from "lucide-react";
 
@@ -9,25 +10,74 @@ type Experience = {
   achievements: { text: string; skills: string[] }[];
 };
 
+// Updated with data from the user's resume and message
 const EXPERIENCES: Experience[] = [
   {
     company: "Lifesight",
     role: "Product Analyst",
     period: "June 2023 – January 2024",
     description:
-      "At Lifesight, I led projects across CRM, E-comm, and Ad platform integrations, optimized cloud processes, and worked closely with GTM teams to deliver actionable insights for product, data, and business strategies.",
+      "At Lifesight, I led platform integrations, automated cloud ops, optimized internal data workflows, and delivered technical solutions that increased platform reliability, cost efficiency, and product adoption. I closely collaborated with GTM and product teams to roll out impactful features across the org.",
     achievements: [
       {
-        text: "Spearheaded rollout of reporting features for APAC clients, increasing NPS by 18%.",
-        skills: ["SQL", "Data Analysis", "User Interviews", "Feature Launch"],
+        text: "Developed R/ETL workflows for major CRMs, E-commerce, and Ad platforms, contributing to 33% of platform integrations.",
+        skills: ["ETL", "CRM", "E-commerce", "Ad Tech", "Integrations"],
       },
       {
-        text: "Developed data dashboards for GTM teams, reducing reporting time by 40%.",
-        skills: ["Dashboarding", "Business Analysis", "Cross-functional Work"],
+        text: "Implemented automated sanity checks, reducing cloud costs for repetitive tasks by 50%.",
+        skills: ["Cloud Automation", "Cost Optimization", "Python"],
       },
       {
-        text: "Led end-to-end design and testing for onboarding experience optimization.",
-        skills: ["Onboarding", "Usability Testing", "Design Thinking"],
+        text: "Led dogfooding project for internal testing; surfaced issues and communicated actionable insights to marketing & sales.",
+        skills: ["Internal Testing", "QA", "Cross-Team Collaboration"],
+      },
+      {
+        text: "Launched Custom API feature, improving adoptability by 15% for bespoke data sources.",
+        skills: ["API Design", "Product Adoption"],
+      },
+      {
+        text: "Automated exception handling for integrations, reducing errors by 33%.",
+        skills: ["Integration", "Automation", "Error Handling"],
+      },
+      {
+        text: "Created detailed PRDs and workflow demos, reducing dependency on engineering by 25%.",
+        skills: ["PRD Writing", "Business Analysis", "Documentation"],
+      },
+      {
+        text: "Deployed GTM containers with custom events, boosting platform trust by 20%.",
+        skills: ["Tag Management", "Event Tracking", "GTM"],
+      },
+      {
+        text: "Enhanced MMM models with Halo effect & Commute zones, improving prediction accuracy by 5%.",
+        skills: ["MMM", "Data Modeling", "Product Analytics"],
+      },
+      {
+        text: "Wrote go-to SQL queries for dashboards, reducing monitoring time by 30%.",
+        skills: ["SQL", "Dashboarding", "Data Monitoring"],
+      },
+      {
+        text: "Created internal knowledge base for resolving client errors, reducing response time by 40%.",
+        skills: ["Knowledge Base", "Client Support", "Process Improvement"],
+      },
+      {
+        text: "Led market research for product roadmap deliverables to enable effective decision making.",
+        skills: ["Market Research", "Product Roadmap"],
+      },
+      {
+        text: "Coordinated rollout of 10+ features with SPMs, designers, and developers in 1 year.",
+        skills: ["Feature Launch", "Stakeholder Management", "Agile"],
+      },
+      {
+        text: "Used Meltano to build efficient ETL pipelines and completed Snowflake-to-BigQuery integration, unlocking cost-effective workflows.",
+        skills: ["Meltano", "Snowflake", "BigQuery", "ETL"],
+      },
+      {
+        text: "Built user segment insights to connect platform usage with key KPIs.",
+        skills: ["Segmentation", "KPI Analysis", "Data Analytics"],
+      },
+      {
+        text: "Maintained strong client relationships for effective partnerships.",
+        skills: ["Client Relations", "Communication"],
       },
     ],
   },
@@ -36,20 +86,49 @@ const EXPERIENCES: Experience[] = [
     role: "Product Intern",
     period: "January 2023 – May 2023",
     description:
-      "I supported the founder building out product strategy and roadmaps, ran competitive research, and designed user journeys for a B2B SaaS analytics platform, collaborating with developers to deliver user-focused solutions.",
+      "At Gauge, I owned the design and build of the product from zero to MVP, defining workflows, writing user stories, collaborating on design systems, and running user interviews to refine and prioritize features. Managed product delivery alongside the founder, driving the team towards planned milestones.",
     achievements: [
       {
-        text: "Conducted competitive benchmarking to inform MVP feature set.",
-        skills: ["Benchmarking", "MVP", "Market Research"],
+        text: "Drove end-to-end product development from ideation to MVP (till testing phase).",
+        skills: ["Product Development", "MVP", "Lifecycle Management"],
       },
       {
-        text: "Mapped customer feedback from 20+ interviews to product improvements.",
-        skills: ["Customer Interviews", "Feedback Analysis"],
+        text: "Mapped full user journey (order to inventory), defining API endpoints and requirements.",
+        skills: ["User Journey", "API Design", "Workflow Mapping"],
+      },
+      {
+        text: "Designed 100+ wireframes and user stories, covering application scenarios and edge cases.",
+        skills: ["Wireframing", "User Stories", "UX Design"],
+      },
+      {
+        text: "Collaborated with designers to create and finalize the app’s first style guide.",
+        skills: ["Design Collaboration", "Style Guides"],
+      },
+      {
+        text: "Prioritized features after in-depth user interviews and market research.",
+        skills: ["User Interviews", "Market Research", "Feature Prioritization"],
+      },
+      {
+        text: "Wrote clear user stories for developers and ran weekly sprint planning with the founder.",
+        skills: ["Sprint Planning", "Story Writing", "Team Collaboration"],
+      },
+      {
+        text: "Led daily sync-ups to manage team tasks, clear blockers, and meet delivery timelines.",
+        skills: ["Team Management", "Scrum", "Problem Solving"],
+      },
+      {
+        text: "Formulated user flows to define API endpoints and improve requirement clarity.",
+        skills: ["User Flows", "API Requirements"],
+      },
+      {
+        text: "Ensured deep functional understanding of the product before implementation.",
+        skills: ["Product Understanding", "Requirements Analysis"],
       },
     ],
   },
 ];
 
+// Regenerate ALL_SKILLS based on updated achievements above
 const ALL_SKILLS = Array.from(
   new Set(
     EXPERIENCES.flatMap((exp) => exp.achievements.flatMap((a) => a.skills))
@@ -98,3 +177,4 @@ export function ExperienceTimeline({
 }
 
 export { EXPERIENCES, ALL_SKILLS };
+

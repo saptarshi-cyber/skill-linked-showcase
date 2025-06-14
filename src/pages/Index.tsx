@@ -2,10 +2,13 @@
 import { useState } from "react";
 import { Header } from "../components/Header";
 import { HeroSection } from "../components/HeroSection";
-import { ExperienceTimeline } from "../components/ExperienceTimeline";
 import { SkillsMap } from "../components/SkillsMap";
+import { ExperienceTimeline } from "../components/ExperienceTimeline";
+import { CaseStudiesSection } from "../components/CaseStudiesSection";
 import { ProjectShowcase } from "../components/ProjectShowcase";
 import { AboutBlock } from "../components/AboutBlock";
+
+const sectionSpacing = "py-6 sm:py-7"; // Use uniform vertical spacing per section
 
 const Index = () => {
   const [selectedSkill, setSelectedSkill] = useState<string | undefined>(undefined);
@@ -15,12 +18,21 @@ const Index = () => {
       <Header />
       <main className="w-full flex-1 flex flex-col items-center">
         <HeroSection />
-        <div className="w-full flex flex-col gap-12">
+        <section className={sectionSpacing} style={{ width: "100%" }}>
           <SkillsMap selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill} />
+        </section>
+        <section className={sectionSpacing} style={{ width: "100%" }}>
           <ExperienceTimeline selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill} />
+        </section>
+        <section className={sectionSpacing} style={{ width: "100%" }}>
+          <CaseStudiesSection />
+        </section>
+        <section className={sectionSpacing} style={{ width: "100%" }}>
           <ProjectShowcase />
+        </section>
+        <section className={sectionSpacing} style={{ width: "100%" }}>
           <AboutBlock />
-        </div>
+        </section>
       </main>
     </div>
   );

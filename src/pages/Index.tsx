@@ -7,6 +7,7 @@ import { ExperienceTimeline } from "../components/ExperienceTimeline";
 import { CaseStudiesSection } from "../components/CaseStudiesSection";
 import { ProjectShowcase } from "../components/ProjectShowcase";
 import { AboutBlock } from "../components/AboutBlock";
+import { CertificationsSection } from "../components/CertificationsSection";
 import { ALL_SKILLS } from "../components/ExperienceTimeline"; // For initial skill
 
 const sectionSpacing = "py-6 sm:py-7"; // Use uniform vertical spacing per section
@@ -40,6 +41,10 @@ const Index = () => {
         {/* Projects */}
         <section className={sectionSpacing} style={{ width: "100%" }}>
           <ProjectShowcase />
+        </section>
+        {/* Certifications */}
+        <section className={sectionSpacing} style={{ width: "100%" }}>
+          <CertificationsSection />
         </section>
       </main>
       {/* Footer moved here */}

@@ -1,11 +1,12 @@
+
 export function AboutBlock() {
   return (
     <section id="about" className="my-6 max-w-5xl mx-auto">
       <div className="bg-gradient-to-br from-white via-indigo-50 to-purple-100 rounded-2xl shadow-lg border border-border p-5 flex flex-col md:flex-row items-center gap-4">
         <img
-          src="/lovable-uploads/5054563e-8f51-4e2d-b8df-22db7b1a8eda.png"
+          src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=300&h=300&fit=facearea&facepad=2.5"
           className="w-24 h-24 object-cover rounded-full border-4 border-indigo-300 shadow hidden md:block"
-          alt="Portrait of Saptarshi"
+          alt="Portrait placeholder"
         />
         <div>
           <h3 className="text-2xl font-bold text-primary mb-1">Who am I?</h3>

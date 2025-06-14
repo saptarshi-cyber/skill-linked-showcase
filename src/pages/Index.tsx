@@ -19,12 +19,12 @@ const Index = () => {
     <div className="bg-background min-h-screen flex flex-col">
       <Header />
       <main className="w-full flex-1 flex flex-col items-center">
-        {/* Best practice order: AboutBlock (Who am I) at the top */}
+        {/* Hero section at the top */}
+        <HeroSection />
+        {/* AboutBlock (Who am I) second */}
         <section className={sectionSpacing} style={{ width: "100%" }}>
           <AboutBlock />
         </section>
-        {/* Hero section next */}
-        <HeroSection />
         {/* Skills Map */}
         <section className={sectionSpacing} style={{ width: "100%" }}>
           <SkillsMap selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill} />

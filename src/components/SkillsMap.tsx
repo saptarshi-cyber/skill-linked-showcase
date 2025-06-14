@@ -1,4 +1,3 @@
-
 import { SkillTag } from "./SkillTag";
 import { EXPERIENCES, ALL_SKILLS } from "./ExperienceTimeline";
 import { useState } from "react";
@@ -24,15 +23,15 @@ export function SkillsMap({
   });
 
   return (
-    <section id="skills" className="my-20 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold mb-3 flex items-center gap-2 text-primary">
+    <section id="skills" className="my-10 max-w-5xl mx-auto">
+      <h2 className="text-3xl font-bold mb-1 flex items-center gap-2 text-primary">
         <Star size={22} />
         Skills Map
       </h2>
-      <p className="text-muted-foreground mb-4">
-        Click any skill to spotlight “where” it helped shape results in experience below (and vice versa).
+      <p className="text-muted-foreground mb-3">
+        Click any skill to spotlight where it made an impact in my work.
       </p>
-      <div className="flex flex-wrap gap-2 mb-8">
+      <div className="flex flex-wrap gap-2 mb-6">
         {ALL_SKILLS.map((skill) => (
           <SkillTag
             key={skill}

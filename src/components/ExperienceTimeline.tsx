@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { SkillTag } from "./SkillTag";
 import { Briefcase } from "lucide-react";
 
@@ -13,39 +12,39 @@ type Experience = {
 
 const EXPERIENCES: Experience[] = [
   {
-    company: "Acme Inc.",
-    role: "Product Specialist",
-    period: "2022 – Present",
-    description: "Driving customer-centric feature delivery for SaaS workflow tools.",
+    company: "Lifesight",
+    role: "Product Analyst",
+    period: "June 2023 – January 2024",
+    description: "Analysed user journeys and product data to drive actionable insights for product feature decisions and business outcomes.",
     achievements: [
       {
-        text: "Launched new onboarding flows increasing user activation by 40%.",
-        skills: ["User Research", "A/B Testing", "UX", "Product Strategy"],
+        text: "Spearheaded rollout of reporting features for APAC clients, increasing NPS by 18%.",
+        skills: ["SQL", "Data Analysis", "User Interviews", "Feature Launch"],
       },
       {
-        text: "Mentored 10+ aspiring PMs through cohort-based sessions.",
-        skills: ["Mentorship", "Public Speaking"],
+        text: "Developed data dashboards for GTM teams, reducing reporting time by 40%.",
+        skills: ["Dashboarding", "Business Analysis", "Cross-functional Work"],
       },
       {
-        text: "Coordinated with cross-functional teams to reduce bug rate by 20%.",
-        skills: ["Collaboration", "Agile", "QA"],
+        text: "Led end-to-end design and testing for onboarding experience optimization.",
+        skills: ["Onboarding", "Usability Testing", "Design Thinking"],
       },
     ],
   },
   {
-    company: "BetaHub",
-    role: "Associate Product Manager",
-    period: "2020 – 2022",
+    company: "Gauge",
+    role: "Product Intern",
+    period: "January 2023 – May 2023",
     description:
-      "Shipped features and supported launch of early-stage B2B products.",
+      "Assisted in building product features for SaaS analytics platform. Supported roadmap planning and requirement detailing.",
     achievements: [
       {
-        text: "Designed & executed Product Feedback loop for 3 core features.",
-        skills: ["Customer Interviews", "MVP", "Product Roadmapping"],
+        text: "Conducted competitive benchmarking to inform MVP feature set.",
+        skills: ["Benchmarking", "MVP", "Market Research"],
       },
       {
-        text: "Built knowledge base & onboarding decks for new teams.",
-        skills: ["Documentation", "Training"],
+        text: "Mapped customer feedback from 20+ interviews to product improvements.",
+        skills: ["Customer Interviews", "Feedback Analysis"],
       },
     ],
   },
@@ -65,21 +64,21 @@ export function ExperienceTimeline({
   setSelectedSkill?: (skill: string | undefined) => void;
 }) {
   return (
-    <section id="experience" className="my-16 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold text-primary mb-2 flex items-center gap-1">
+    <section id="experience" className="my-10 max-w-5xl mx-auto">
+      <h2 className="text-3xl font-bold text-primary mb-1 flex items-center gap-1">
         <Briefcase className="inline mr-1" size={24} />
         Experience
       </h2>
-      <p className="text-muted-foreground mb-8">
-        Each skill, each story. Click on any skill to highlight its journey.
+      <p className="text-muted-foreground mb-5">
+        Click any skill to see how it mapped to real impact.
       </p>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-5">
         {EXPERIENCES.map((exp, idx) => (
           <div
             key={exp.company + idx}
-            className="bg-card/60 border border-border shadow-lg rounded-xl px-8 py-6 hover:scale-[1.01] transition"
+            className="bg-card/60 border border-border shadow-lg rounded-xl px-6 py-5 hover:scale-[1.01] transition"
           >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pb-2 border-b mb-3">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pb-2 border-b mb-2">
               <div>
                 <span className="font-semibold text-lg text-primary">
                   {exp.role}
@@ -89,8 +88,8 @@ export function ExperienceTimeline({
               </div>
               <span className="text-xs text-indigo-400">{exp.period}</span>
             </div>
-            <div className="text-muted-foreground mb-3">{exp.description}</div>
-            <ul className="list-disc ml-6 space-y-3">
+            <div className="text-muted-foreground mb-2">{exp.description}</div>
+            <ul className="list-disc ml-6 space-y-2">
               {exp.achievements.map((item, achvIdx) => (
                 <li
                   key={item.text + achvIdx}
@@ -120,5 +119,4 @@ export function ExperienceTimeline({
   );
 }
 
-// Also export EXPERIENCES and ALL_SKILLS for SkillsMap and future pages
 export { EXPERIENCES, ALL_SKILLS };

@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp, BookOpenCheck } from "lucide-react";
 
 type CaseStudy = {
   title: string;
-  problemStatement: string;
+  problemStatement: React.ReactNode;
   solutionSummary: React.ReactNode;
   analysis: React.ReactNode;
 };
@@ -20,7 +20,7 @@ const CASE_STUDIES: CaseStudy[] = [
             Dataset: Free user bookings with coaches, with funnel (Bot/Free-Trial), lead type (Medical/NRI), sales ability (Target Class A-D), booking and payment times.
           </li>
           <li>
-            Tasks included: 
+            Tasks included:
             <ul className="list-inside list-disc ml-3">
               <li>Analyze 3 & 7-day conversions by lead type and funnel.</li>
               <li>Identify best hours for connectivity and sales.</li>
@@ -36,29 +36,29 @@ const CASE_STUDIES: CaseStudy[] = [
         <strong>Solution Approach:</strong>
         <ul className="list-disc ml-6 text-sm mb-3">
           <li>
-            <b>Data Cleaning & Segmentation:</b> Carefully mapped user bookings by funnel, medical condition, geography, and matched booking times to payment signals for conversion windows.
+            <b>Data Cleaning & Segmentation:</b> I mapped bookings by funnel, medical condition, and geography, then matched booking times to payment signals for measuring conversion windows.
           </li>
           <li>
-            <b>Conversion Analysis:</b> Calculated 3/7-day conversion rates for each segment; visualized hourly booking vs. conversion patterns.
+            <b>Conversion Analysis:</b> I calculated 3/7-day conversion rates for each segment, and visualized hourly booking and conversion patterns.
           </li>
           <li>
             <b>Insights & Optimization:</b>
             <ul className="list-inside list-disc ml-3">
-              <li>Bot funnel: High leads, low conversion; FT: Lower volume, much higher conversion. FT efficiency is 2-3x Bot funnel.</li>
-              <li>Mapped peak conversion/sales hours (India: 5–7PM & 8–10PM) to optimize coach allocation by class.</li>
-              <li>Formulated resource allocation model—assign best-selling coaches to peak/intense segments, scale FT lead quality, test hybrid routing.</li>
+              <li>Bot funnel: High leads, but lower conversion rates. FT: Lower but much higher conversion. FT efficiency was 2-3x Bot funnel.</li>
+              <li>Mapped peak sales hours (India: 5–7PM & 8–10PM) to optimize coach allocation by class.</li>
+              <li>Formulated resource allocation model—assign best-selling coaches to peak/intense segments, scale FT lead quality, and test hybrid routing.</li>
             </ul>
           </li>
           <li>
             <b>Final Recommendations:</b>
             <ul className="list-inside list-disc ml-3">
-              <li>Ruthlessly qualify Bot leads or reroute best-intent into FT.</li>
-              <li>Match high-quality coaches to high-intent slots during peaks.</li>
-              <li>Real-time monitor underperforming slots/coaches and rebalance on-the-fly.</li>
+              <li>Qualify Bot leads more strictly or reroute high-intent users to FT.</li>
+              <li>Match the best coaches to peak slots and monitor underperforming slots real-time for rebalancing.</li>
+              <li>I also detail real-time monitoring and rebalance strategies.</li>
             </ul>
           </li>
         </ul>
-        <div className="flex gap-4 text-xs">
+        <div className="flex flex-wrap gap-4 text-xs mt-2">
           <a
             className="underline text-indigo-700 hover:opacity-80 transition"
             href="https://docs.google.com/spreadsheets/d/1P-PvipHVrNEgHWLxkJvxMJEvFVvWAddb/edit?gid=2134676910#gid=2134676910"
@@ -75,20 +75,36 @@ const CASE_STUDIES: CaseStudy[] = [
           >
             Notebook (sample)
           </a>
+          <a
+            className="underline text-indigo-700 hover:opacity-80 transition"
+            href="https://docs.google.com/document/d/1GgYT1CzYBnm3r4il8F87Nvx1QwDsgors/edit?usp=sharing&ouid=112716720863127862961&rtpof=true&sd=true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Full writeup (Google Doc)
+          </a>
         </div>
       </div>
     ),
     analysis: (
       <div>
-        <strong>Product Aspirant Analysis — Why this showcases Saptarshi’s strengths:</strong>
+        <strong>Reflection & Takeaways:</strong>
         <ul className="list-disc ml-6 text-sm mt-1">
-          <li><b>Analytical Depth:</b> Applied segment-mapping, time-windowed conversion metrics, and cohort analysis—beyond superficial stats.</li>
-          <li><b>Commercial Mindset:</b> Keen focus on optimizing resource allocation, peak sales timing, and funnel efficiency for real business outcomes.</li>
-          <li><b>Strategic Impact:</b> Proposed frameworks (hybrid routing, real-time monitoring) that are actionable and scalable.</li>
-          <li><b>User & Data-Driven:</b> Insights highlight user journey pain points (long time-to-convert, inefficient bot-funnel) and suggest fixes centered on user intent.</li>
+          <li>
+            <b>Analytical Depth:</b> I went beyond simple statistics and applied careful segmentation, time-windowed conversion analysis, and cohort breakdowns to understand what's really happening.
+          </li>
+          <li>
+            <b>Product Thinking:</b> My recommendations focused on practical solutions—resource allocation models, peak-hour rebalancing, and evolving funnel design.
+          </li>
+          <li>
+            <b>User-First Mindset:</b> I targeted my optimizations at minimizing friction and surfacing high-intent users for the team, rather than just maximizing numbers.
+          </li>
+          <li>
+            <b>Strategic Impact:</b> This exercise highlights how I combine quantitative skill and product intuition to frame insights teams can actually build on.
+          </li>
           <li>
             <span className="italic">
-              Saptarshi’s approach demonstrates both quantitative skill and strategic vision—the DNA of a great Product Manager.
+              If you have challenges like this—I'd love to explore them with you!
             </span>
           </li>
         </ul>

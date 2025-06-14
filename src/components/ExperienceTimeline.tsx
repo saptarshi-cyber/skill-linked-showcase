@@ -14,7 +14,8 @@ const EXPERIENCES: Experience[] = [
     company: "Lifesight",
     role: "Product Analyst",
     period: "June 2023 – January 2024",
-    description: "Analysed user journeys and product data to drive actionable insights for product feature decisions and business outcomes.",
+    description:
+      "At Lifesight, I led projects across CRM, E-comm, and Ad platform integrations, optimized cloud processes, and worked closely with GTM teams to deliver actionable insights for product, data, and business strategies.",
     achievements: [
       {
         text: "Spearheaded rollout of reporting features for APAC clients, increasing NPS by 18%.",
@@ -35,7 +36,7 @@ const EXPERIENCES: Experience[] = [
     role: "Product Intern",
     period: "January 2023 – May 2023",
     description:
-      "Assisted in building product features for SaaS analytics platform. Supported roadmap planning and requirement detailing.",
+      "I supported the founder building out product strategy and roadmaps, ran competitive research, and designed user journeys for a B2B SaaS analytics platform, collaborating with developers to deliver user-focused solutions.",
     achievements: [
       {
         text: "Conducted competitive benchmarking to inform MVP feature set.",
@@ -88,29 +89,7 @@ export function ExperienceTimeline({
               <span className="text-xs text-indigo-400">{exp.period}</span>
             </div>
             <div className="text-muted-foreground mb-2">{exp.description}</div>
-            <ul className="list-disc ml-6 space-y-2">
-              {exp.achievements.map((item, achvIdx) => (
-                <li
-                  key={item.text + achvIdx}
-                  className="text-base"
-                >
-                  {item.text}
-                  <div className="flex flex-wrap gap-2 mt-1">
-                    {item.skills.map((sk) => (
-                      <SkillTag
-                        key={sk}
-                        skill={sk}
-                        highlight={selectedSkill === sk}
-                        onClick={() =>
-                          setSelectedSkill &&
-                          setSelectedSkill(selectedSkill === sk ? undefined : sk)
-                        }
-                      />
-                    ))}
-                  </div>
-                </li>
-              ))}
-            </ul>
+            {/* Achievements intentionally omitted here to avoid duplication */}
           </div>
         ))}
       </div>

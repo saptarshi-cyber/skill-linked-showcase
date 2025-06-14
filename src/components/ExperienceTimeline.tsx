@@ -1,4 +1,3 @@
-
 import { SkillTag } from "./SkillTag";
 import { Briefcase } from "lucide-react";
 
@@ -17,7 +16,7 @@ const EXPERIENCES: Experience[] = [
     role: "Product Analyst",
     period: "June 2023 – January 2024",
     description:
-      "At Lifesight, I led platform integrations, automated cloud ops, optimized internal data workflows, and delivered technical solutions that increased platform reliability, cost efficiency, and product adoption. I closely collaborated with GTM and product teams to roll out impactful features across the org.",
+      "During my time at Lifesight, I spearheaded the end-to-end delivery of platform integrations and automated cloud operations, focusing on elevating both platform reliability and cost efficiency. I proactively collaborated with go-to-market and product teams to deliver impactful technical solutions and drive the adoption of new features. By streamlining internal reporting, optimizing big data pipelines, and leading testing initiatives, I significantly enhanced the value delivered to clients and empowered cross-functional teams to execute more effectively.",
     achievements: [
       {
         text: "Developed R/ETL workflows for major CRMs, E-commerce, and Ad platforms, contributing to 33% of platform integrations.",
@@ -86,7 +85,7 @@ const EXPERIENCES: Experience[] = [
     role: "Product Intern",
     period: "January 2023 – May 2023",
     description:
-      "At Gauge, I owned the design and build of the product from zero to MVP, defining workflows, writing user stories, collaborating on design systems, and running user interviews to refine and prioritize features. Managed product delivery alongside the founder, driving the team towards planned milestones.",
+      "At Gauge, I drove the complete product development lifecycle, building an MVP from scratch and collaborating closely on designing user journeys, requirements gathering, and sprint planning. My role involved running user interviews, translating feedback into actionable feature priorities, and working closely with designers to create a unified UI/UX vision. Managing the team’s delivery alongside the founder, I ensured the timely completion of key milestones through effective communication and deep functional knowledge.",
     achievements: [
       {
         text: "Drove end-to-end product development from ideation to MVP (till testing phase).",
@@ -149,7 +148,7 @@ export function ExperienceTimeline({
         Experience
       </h2>
       <p className="text-muted-foreground mb-4">
-        Click any skill to see how it mapped to real impact.
+        To view detailed experience, please download the resume. This is just a summary.
       </p>
       <div className="flex flex-col gap-5">
         {EXPERIENCES.map((exp, idx) => (
@@ -177,4 +176,3 @@ export function ExperienceTimeline({
 }
 
 export { EXPERIENCES, ALL_SKILLS };
-

@@ -3,23 +3,19 @@ export function AboutBlock() {
   return (
     <section id="about" className="my-6 max-w-5xl mx-auto">
       <div className="bg-gradient-to-br from-white via-indigo-50 to-purple-100 rounded-2xl shadow-lg border border-border p-5 flex flex-col md:flex-row items-center gap-4">
-        <img
-          src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=300&h=300&fit=facearea&facepad=2.5"
-          className="w-24 h-24 object-cover rounded-full border-4 border-indigo-300 shadow hidden md:block"
-          alt="Portrait placeholder"
-        />
+        {/* Removed image per user request */}
         <div>
           <h3 className="text-2xl font-bold text-primary mb-1">Who am I?</h3>
           <p className="text-base text-muted-foreground mb-1">
-            I’m Saptarshi — a product aspirant passionate about solving business and user challenges through tech, data, and relentless curiosity.
+            I’m Saptarshi — a product enthusiast passionate about leveraging technology, data, and curiosity to solve business and user challenges.
           </p>
           <p className="text-base text-muted-foreground mb-2">
-            A empathizer with a knack of product development
+            A natural empathizer with a knack for product development.
           </p>
           <ul className="list-disc ml-8 text-sm text-muted-foreground mb-2">
-            <li>Experience across SaaS analytics and growth teams</li>
-            <li>Obsessed with user journeys, data, and measurable outcomes</li>
-            <li>Lifelong learner and aspiring future product manager</li>
+            <li>Experienced in SaaS analytics and cross-functional growth teams</li>
+            <li>Obsessed with user journeys, actionable data, and impactful outcomes</li>
+            <li>Lifelong learner and an aspiring product manager</li>
           </ul>
           <a
             href="mailto:saptarshi@example.com"
@@ -29,7 +25,7 @@ export function AboutBlock() {
           </a>
         </div>
       </div>
-      {/* Footer moved to Index */}
+      {/* Footer is handled in Index */}
     </section>
   );
 }

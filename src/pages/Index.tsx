@@ -1,12 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from "react";
+import { Header } from "../components/Header";
+import { HeroSection } from "../components/HeroSection";
+import { ExperienceTimeline } from "../components/ExperienceTimeline";
+import { SkillsMap } from "../components/SkillsMap";
+import { ProjectShowcase } from "../components/ProjectShowcase";
+import { AboutBlock } from "../components/AboutBlock";
 
 const Index = () => {
+  const [selectedSkill, setSelectedSkill] = useState<string | undefined>(undefined);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="bg-background min-h-screen flex flex-col">
+      <Header />
+      <main className="w-full flex-1 flex flex-col items-center">
+        <HeroSection />
+        <div className="w-full flex flex-col gap-12">
+          <SkillsMap selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill} />
+          <ExperienceTimeline selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill} />
+          <ProjectShowcase />
+          <AboutBlock />
+        </div>
+      </main>
     </div>
   );
 };

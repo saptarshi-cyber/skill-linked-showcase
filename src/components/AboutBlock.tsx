@@ -1,4 +1,3 @@
-
 export function AboutBlock() {
   return (
     <section id="about" className="my-6 max-w-5xl mx-auto">
@@ -14,7 +13,7 @@ export function AboutBlock() {
             I’m Saptarshi — a product aspirant passionate about solving business and user challenges through tech, data, and relentless curiosity.
           </p>
           <p className="text-base text-muted-foreground mb-2">
-            My mission: Learn fast, contribute meaningfully, and turn ambiguity into product momentum.
+            A empathizer with a knack of product development
           </p>
           <ul className="list-disc ml-8 text-sm text-muted-foreground mb-2">
             <li>Experience across SaaS analytics and growth teams</li>
@@ -29,9 +28,7 @@ export function AboutBlock() {
           </a>
         </div>
       </div>
-      <div className="text-center mt-5 text-xs text-muted-foreground">
-        &copy; {new Date().getFullYear()} Saptarshi — Made with ❤️ for Product Careers
-      </div>
+      {/* Footer moved to Index */}
     </section>
   );
 }

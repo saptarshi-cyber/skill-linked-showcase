@@ -42,6 +42,10 @@ const Index = () => {
           <ProjectShowcase />
         </section>
       </main>
+      {/* Footer moved here */}
+      <div className="text-center mt-5 text-xs text-muted-foreground pb-3">
+        &copy; {new Date().getFullYear()} Saptarshi — Made with ❤️ for Product Careers
+      </div>
     </div>
   );
 };

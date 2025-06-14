@@ -1,14 +1,14 @@
 
 import { Button } from "@/components/ui/button";
-import { Linkedin, FileText } from "lucide-react";
+import { Linkedin, FileText, BookOpenCheck, BadgeCheck } from "lucide-react";
 
 export function Header() {
   return (
     <header className="flex items-center justify-between py-8 px-4 border-b bg-white/90 sticky top-0 z-20">
       <div className="flex flex-col">
-        <span className="text-lg font-semibold tracking-wide text-primary">Saptarshi</span>
+        <span className="text-lg font-semibold tracking-wide text-primary">Saptarshi Mukhopadhyay</span>
         <span className="text-xs text-muted-foreground">
-          Aspiring Product Specialist & Growth-Oriented Portfolio
+          Product Virtuoso & Growth-Oriented Portfolio
         </span>
       </div>
       <nav className="flex gap-4">
@@ -23,6 +23,16 @@ export function Header() {
         </Button>
         <Button variant="ghost" asChild>
           <a href="#about" className="font-medium hover:underline">About</a>
+        </Button>
+        <Button variant="ghost" asChild>
+          <a href="#case-studies" className="font-medium hover:underline flex items-center gap-1">
+            <BookOpenCheck size={16} /> Case Studies
+          </a>
+        </Button>
+        <Button variant="ghost" asChild>
+          <a href="#certifications" className="font-medium hover:underline flex items-center gap-1">
+            <BadgeCheck size={16}/> Certifications
+          </a>
         </Button>
         <Button size="icon" variant="outline" asChild>
           <a 

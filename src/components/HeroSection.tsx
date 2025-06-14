@@ -7,15 +7,14 @@ export function HeroSection() {
         <img
           src="/lovable-uploads/5054563e-8f51-4e2d-b8df-22db7b1a8eda.png"
           className="w-28 h-28 object-cover rounded-full border-4 border-primary/70 shadow-md"
-          alt="Portrait of Saptarshi"
+          alt="Portrait of Saptarshi Mukhopadhyay"
         />
         <div className="text-center lg:text-left max-w-xl">
           <h1 className="text-4xl font-extrabold leading-tight tracking-tighter text-primary mb-1">
-            Saptarshi — Product Aspirant Turning Curiosity Into Impact
+            Saptarshi Mukhopadhyay — Product Virtuoso Turning Curiosity Into Impact
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed mb-3">
-            I combine analytical skills, a love for discovery, and technical know-how to help teams deliver products that matter.<br />
-            Let’s connect if you’re hiring, collaborating, or want to chat product!
+            Sometimes I build bridges between business and tech—other times, I just build really helpful spreadsheets. If you value clever, data-powered solutions and the occasional witty comment in your standups, well, my inbox awaits.
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
             <a

@@ -127,12 +127,23 @@ const EXPERIENCES: Experience[] = [
   },
 ];
 
-// Regenerate ALL_SKILLS based on updated achievements above
-const ALL_SKILLS = Array.from(
-  new Set(
-    EXPERIENCES.flatMap((exp) => exp.achievements.flatMap((a) => a.skills))
-  )
-).sort();
+// Deduplicated and expanded ALL_SKILLS set manually for more control.
+const ALL_SKILLS = [
+  "API", "API Design", "Ad Tech", "Agile",
+  "BigQuery", "Business Analysis", "Cloud Automation", "Client Relations",
+  "Communication", "Cost Optimization", "CRM", "Cross-Team Collaboration",
+  "Data Analytics", "Data Modeling", "Data Monitoring", "Dashboarding",
+  "Documentation", "E-commerce", "ETL", "Event Tracking",
+  "Feature Launch", "GTM", "Google Cloud", "Integration", "Internal Testing",
+  "KPI Analysis", "Knowledge Base", "Market Research", "Meltano",
+  "MMM", "MVP", "PRD Writing", "Postman", "Problem Solving",
+  "Process Improvement", "Product Adoption", "Product Development", "Product Roadmap",
+  "Product Understanding", "Python", "QA", "Requirements Analysis", "Scrum",
+  "Segmentation", "Snowflake", "SQL", "Stakeholder Management", "Story Writing",
+  "Style Guides", "Tag Management", "Team Collaboration", "Team Management",
+  "User Flows", "User Interviews", "User Journey", "User Stories", "UX Design", 
+  "Wireframing"
+];
 
 export function ExperienceTimeline({
   selectedSkill,
@@ -148,28 +159,43 @@ export function ExperienceTimeline({
         Experience
       </h2>
       <p className="text-muted-foreground mb-4">
-        To view detailed experience, please download the resume. This is just a summary.
+        Looking for a taste of my journey? Here's the highlight reel—the good, the great, and the “wait, how did I pull that off?” moments. For the full binge-watch version, download my resume.
       </p>
       <div className="flex flex-col gap-5">
-        {EXPERIENCES.map((exp, idx) => (
-          <div
-            key={exp.company + idx}
-            className="bg-card/60 border border-border shadow-lg rounded-xl px-6 py-5 hover:scale-[1.01] transition"
-          >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pb-2 border-b mb-2">
-              <div>
-                <span className="font-semibold text-lg text-primary">
-                  {exp.role}
-                </span>
-                <span className="mx-2 text-muted-foreground">@</span>
-                <span className="font-medium text-indigo-700">{exp.company}</span>
-              </div>
-              <span className="text-xs text-indigo-400">{exp.period}</span>
+        <div
+          className="bg-card/60 border border-border shadow-lg rounded-xl px-6 py-5 hover:scale-[1.01] transition"
+        >
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pb-2 border-b mb-2">
+            <div>
+              <span className="font-semibold text-lg text-primary">
+                Product Analyst
+              </span>
+              <span className="mx-2 text-muted-foreground">@</span>
+              <span className="font-medium text-indigo-700">Lifesight</span>
             </div>
-            <div className="text-muted-foreground mb-2">{exp.description}</div>
-            {/* Achievements intentionally omitted here to avoid duplication */}
+            <span className="text-xs text-indigo-400">June 2023 – January 2024</span>
           </div>
-        ))}
+          <div className="text-muted-foreground mb-2">
+            I dived deep into platform integrations and automation at Lifesight—think of me as the backstage tech wizard who quietly slashed cloud costs, fast-tracked reporting, and made data pipelines behave. Whether it was helping new features find friends (adoption), revealing hidden bugs (cue internal testing drama), or writing the kind of SQL that makes dashboards purr, I was in the thick of it. My superpower? Turning even the messiest data confusion into engineer-free, client-delighting, “wait, this actually works?” solutions. Warning: mentions of BigQuery, Meltano, and too many acronyms ahead.
+          </div>
+        </div>
+        <div
+          className="bg-card/60 border border-border shadow-lg rounded-xl px-6 py-5 hover:scale-[1.01] transition"
+        >
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pb-2 border-b mb-2">
+            <div>
+              <span className="font-semibold text-lg text-primary">
+                Product Intern
+              </span>
+              <span className="mx-2 text-muted-foreground">@</span>
+              <span className="font-medium text-indigo-700">Gauge</span>
+            </div>
+            <span className="text-xs text-indigo-400">January 2023 – May 2023</span>
+          </div>
+          <div className="text-muted-foreground mb-2">
+            At Gauge, I championed the “build a product from nothing but coffee and post-its” approach. From sketching out 100+ wireframes (yes, my Balsamiq subscription paid for itself), to translating cryptic user feedback into features that users actually wanted (and that the devs only low-key hated me for), I kept our scrappy project on-track. Every day was part scrum, part therapy, part bug hunt, and a lot of “why is QA emailing me at 2 AM?”—product life, am I right?
+          </div>
+        </div>
       </div>
     </section>
   );

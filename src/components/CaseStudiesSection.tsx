@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { ChevronDown, ChevronUp, BookOpenCheck } from "lucide-react";
 
@@ -219,6 +220,7 @@ const CASE_STUDIES: CaseStudy[] = [
   },
 ];
 
+// Only allow one open at a time, fix "multiple open" bug by using controlled index
 export function CaseStudiesSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 

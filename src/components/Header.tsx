@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Linkedin, FileText, Blog } from "lucide-react";
+import { Linkedin, FileText } from "lucide-react";
 
 export function Header() {
   return (
@@ -37,11 +37,6 @@ export function Header() {
         <Button size="icon" variant="outline" asChild>
           <a aria-label="Resume PDF" href="https://drive.google.com/file/d/1-AzreiJmTk-nAZyfAavMv4zkuDETA4pN/view?usp=sharing" target="_blank" rel="noopener">
             <FileText size={20} />
-          </a>
-        </Button>
-        <Button size="icon" variant="outline" asChild disabled>
-          <a aria-label="Blog (coming soon)" href="#" tabIndex={-1}>
-            <Blog size={20} className="opacity-60" />
           </a>
         </Button>
       </nav>

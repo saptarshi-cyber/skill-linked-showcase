@@ -1,14 +1,14 @@
 
 import { Button } from "@/components/ui/button";
-import { Linkedin, FileText } from "lucide-react";
+import { Linkedin, FileText, Blog } from "lucide-react";
 
 export function Header() {
   return (
     <header className="flex items-center justify-between py-8 px-4 border-b bg-white/90 sticky top-0 z-20">
       <div className="flex flex-col">
-        <span className="text-lg font-semibold tracking-wide text-primary">Pranav Raj</span>
+        <span className="text-lg font-semibold tracking-wide text-primary">Saptarshi</span>
         <span className="text-xs text-muted-foreground">
-          Product Specialist & Portfolio Mentor
+          Aspiring Product Specialist & Growth-Oriented Portfolio
         </span>
       </div>
       <nav className="flex gap-4">
@@ -27,7 +27,7 @@ export function Header() {
         <Button size="icon" variant="outline" asChild>
           <a 
             aria-label="LinkedIn" 
-            href="https://www.linkedin.com/in/YOUR-LINKEDIN/" 
+            href="https://www.linkedin.com/in/saptarshi--/"
             target="_blank"
             rel="noopener"
           >
@@ -35,8 +35,13 @@ export function Header() {
           </a>
         </Button>
         <Button size="icon" variant="outline" asChild>
-          <a aria-label="Resume PDF" href="/resume.pdf" target="_blank" rel="noopener">
+          <a aria-label="Resume PDF" href="https://drive.google.com/file/d/1-AzreiJmTk-nAZyfAavMv4zkuDETA4pN/view?usp=sharing" target="_blank" rel="noopener">
             <FileText size={20} />
+          </a>
+        </Button>
+        <Button size="icon" variant="outline" asChild disabled>
+          <a aria-label="Blog (coming soon)" href="#" tabIndex={-1}>
+            <Blog size={20} className="opacity-60" />
           </a>
         </Button>
       </nav>

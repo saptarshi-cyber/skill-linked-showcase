@@ -1,58 +1,106 @@
 
 import { Button } from "@/components/ui/button";
-import { Linkedin, FileText, BookOpenCheck, BadgeCheck } from "lucide-react";
+import { Linkedin, FileText, BookOpenCheck, BadgeCheck, Menu } from "lucide-react";
+import { useState } from "react";
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <header className="flex items-center justify-between py-8 px-4 border-b bg-white/90 sticky top-0 z-20">
+    <header className="flex items-center justify-between py-4 sm:py-6 lg:py-8 px-4 sm:px-6 border-b bg-white/90 sticky top-0 z-20">
       <div className="flex flex-col">
-        <span className="text-lg font-semibold tracking-wide text-primary">Saptarshi Mukhopadhyay</span>
-        <span className="text-xs text-muted-foreground">
+        <span className="text-sm sm:text-lg font-semibold tracking-wide text-primary">Saptarshi Mukhopadhyay</span>
+        <span className="text-xs text-muted-foreground hidden sm:block">
           Product Virtuoso & Growth-Oriented Portfolio
         </span>
       </div>
-      <nav className="flex gap-4">
-        <Button variant="ghost" asChild>
-          <a href="#experience" className="font-medium hover:underline">Experience</a>
+      
+      {/* Desktop Navigation */}
+      <nav className="hidden lg:flex gap-2 xl:gap-4">
+        <Button variant="ghost" size="sm" asChild>
+          <a href="#experience" className="font-medium hover:underline text-sm">Experience</a>
         </Button>
-        <Button variant="ghost" asChild>
-          <a href="#skills" className="font-medium hover:underline">Skills Map</a>
+        <Button variant="ghost" size="sm" asChild>
+          <a href="#skills" className="font-medium hover:underline text-sm">Skills Map</a>
         </Button>
-        <Button variant="ghost" asChild>
-          <a href="#projects" className="font-medium hover:underline">Projects</a>
+        <Button variant="ghost" size="sm" asChild>
+          <a href="#projects" className="font-medium hover:underline text-sm">Projects</a>
         </Button>
-        <Button variant="ghost" asChild>
-          <a href="#about" className="font-medium hover:underline">About</a>
+        <Button variant="ghost" size="sm" asChild>
+          <a href="#about" className="font-medium hover:underline text-sm">About</a>
         </Button>
-        <Button variant="ghost" asChild>
-          <a href="#case-studies" className="font-medium hover:underline flex items-center gap-1">
-            <BookOpenCheck size={16} /> Case Studies
+        <Button variant="ghost" size="sm" asChild>
+          <a href="#case-studies" className="font-medium hover:underline flex items-center gap-1 text-sm">
+            <BookOpenCheck size={14} /> Case Studies
           </a>
         </Button>
-        <Button variant="ghost" asChild>
-          <a href="#certifications" className="font-medium hover:underline flex items-center gap-1">
-            <BadgeCheck size={16}/> Certifications
+        <Button variant="ghost" size="sm" asChild>
+          <a href="#certifications" className="font-medium hover:underline flex items-center gap-1 text-sm">
+            <BadgeCheck size={14}/> Certifications
           </a>
         </Button>
-        <Button size="icon" variant="outline" asChild>
+        <Button size="sm" variant="outline" asChild>
           <a 
             aria-label="LinkedIn" 
             href="https://www.linkedin.com/in/saptarshi--/"
             target="_blank"
             rel="noopener"
           >
-            <Linkedin size={20} />
+            <Linkedin size={16} />
           </a>
         </Button>
-        <Button size="icon" variant="outline" asChild>
+        <Button size="sm" variant="outline" asChild>
           <a 
             aria-label="Request Resume" 
             href="mailto:saptarshi1799@gmail.com?subject=Request%20Resume&body=Hey%2C%20can%20I%20take%20a%20look%20at%20your%20resume%3F"
           >
-            <FileText size={20} />
+            <FileText size={16} />
           </a>
         </Button>
       </nav>
+
+      {/* Mobile Navigation */}
+      <div className="lg:hidden">
+        <Button 
+          variant="ghost" 
+          size="sm"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="p-2"
+        >
+          <Menu size={20} />
+        </Button>
+        
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 right-0 bg-white border-b shadow-lg p-4 space-y-2">
+            <a href="#experience" className="block py-2 text-sm font-medium hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Experience</a>
+            <a href="#skills" className="block py-2 text-sm font-medium hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Skills Map</a>
+            <a href="#projects" className="block py-2 text-sm font-medium hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Projects</a>
+            <a href="#about" className="block py-2 text-sm font-medium hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>About</a>
+            <a href="#case-studies" className="block py-2 text-sm font-medium hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Case Studies</a>
+            <a href="#certifications" className="block py-2 text-sm font-medium hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Certifications</a>
+            <div className="flex gap-2 pt-2 border-t">
+              <Button size="sm" variant="outline" asChild>
+                <a 
+                  aria-label="LinkedIn" 
+                  href="https://www.linkedin.com/in/saptarshi--/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <Linkedin size={16} />
+                </a>
+              </Button>
+              <Button size="sm" variant="outline" asChild>
+                <a 
+                  aria-label="Request Resume" 
+                  href="mailto:saptarshi1799@gmail.com?subject=Request%20Resume&body=Hey%2C%20can%20I%20take%20a%20look%20at%20your%20resume%3F"
+                >
+                  <FileText size={16} />
+                </a>
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
     </header>
   );
 }

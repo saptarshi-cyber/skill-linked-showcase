@@ -1,4 +1,3 @@
-
 import { SkillTag } from "./SkillTag";
 import { Briefcase } from "lucide-react";
 
@@ -167,52 +166,60 @@ export function ExperienceTimeline({
   setSelectedSkill?: (skill: string | undefined) => void;
 }) {
   return (
-    <section id="experience" className="my-6 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold text-primary mb-1 flex items-center gap-1">
-        <Briefcase className="inline mr-1" size={24} />
+    <section id="experience" className="my-4 sm:my-6 max-w-5xl mx-auto px-4 sm:px-6">
+      <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-1 flex items-center gap-1">
+        <Briefcase className="inline mr-1" size={20} />
         Experience
       </h2>
-      <p className="text-muted-foreground mb-4">
+      <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">
         Looking for a taste of my journey? Here's the highlight reel—the good, the great, and the "wait, how did I pull that off?" moments. For the full story, feel free to <a href="mailto:saptarshi1799@gmail.com?subject=Request%20Resume&body=Hey%2C%20can%20I%20take%20a%20look%20at%20your%20resume%3F" className="underline text-indigo-700 hover:opacity-80">request my resume</a>.
       </p>
-      <div className="flex flex-col gap-5">
-        <div className="bg-card/60 border border-border shadow-lg rounded-xl px-6 py-5 hover:scale-[1.01] transition">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pb-2 border-b mb-2">
-            <div>
-              <span className="font-semibold text-lg text-primary">Product Analyst</span>
-              <span className="mx-2 text-muted-foreground">@</span>
-              <a 
-                href="https://lifesight.io" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="font-medium text-indigo-700 hover:underline"
-              >
-                Lifesight
-              </a>
+      <div className="flex flex-col gap-4 sm:gap-5">
+        <div className="bg-card/60 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition">
+          <div className="flex flex-col gap-2 pb-2 border-b mb-2">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <span className="font-semibold text-base sm:text-lg text-primary">Product Analyst</span>
+                <div className="flex items-center">
+                  <span className="text-muted-foreground text-sm sm:text-base">@</span>
+                  <a 
+                    href="https://lifesight.io" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-medium text-indigo-700 hover:underline ml-1 text-sm sm:text-base"
+                  >
+                    Lifesight
+                  </a>
+                </div>
+              </div>
+              <span className="text-xs text-indigo-400">June 2023 – April 2025</span>
             </div>
-            <span className="text-xs text-indigo-400">June 2023 – April 2025</span>
           </div>
-          <div className="text-muted-foreground mb-2">
+          <div className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             I dived deep into platform integrations and automation at Lifesight—think of me as the backstage tech wizard who quietly slashed cloud costs, fast-tracked reporting, and made data pipelines behave. Whether it was helping new features find their audience (adoption is an art), revealing hidden bugs (cue internal testing adventures), or writing queries that make dashboards actually useful, I was in the thick of it. My superpower? Turning messy data situations into streamlined, client-delighting solutions that just work.
           </div>
         </div>
-        <div className="bg-card/60 border border-border shadow-lg rounded-xl px-6 py-5 hover:scale-[1.01] transition">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pb-2 border-b mb-2">
-            <div>
-              <span className="font-semibold text-lg text-primary">Product Intern</span>
-              <span className="mx-2 text-muted-foreground">@</span>
-              <a 
-                href="https://gauge.ro" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="font-medium text-indigo-700 hover:underline"
-              >
-                Gauge
-              </a>
+        <div className="bg-card/60 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition">
+          <div className="flex flex-col gap-2 pb-2 border-b mb-2">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <span className="font-semibold text-base sm:text-lg text-primary">Product Intern</span>
+                <div className="flex items-center">
+                  <span className="text-muted-foreground text-sm sm:text-base">@</span>
+                  <a 
+                    href="https://gauge.ro" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-medium text-indigo-700 hover:underline ml-1 text-sm sm:text-base"
+                  >
+                    Gauge
+                  </a>
+                </div>
+              </div>
+              <span className="text-xs text-indigo-400">November 2022 – June 2023</span>
             </div>
-            <span className="text-xs text-indigo-400">November 2022 – June 2023</span>
           </div>
-          <div className="text-muted-foreground mb-2">
+          <div className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             At Gauge, I championed the "build a product from nothing but coffee and determination" approach. From sketching out 100+ wireframes (yes, my design tools got a workout), to translating user feedback into features that users actually wanted, I kept our scrappy project on-track. Every day was part strategy session, part creative problem-solving, and a lot of "how do we make this work with our constraints?"—the real product management experience.
           </div>
         </div>

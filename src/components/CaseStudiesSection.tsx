@@ -11,6 +11,50 @@ type CaseStudy = {
   analysis: React.ReactNode;
 };
 
+type RelevelCaseStudy = {
+  title: string;
+  description: string;
+};
+
+const RELEVEL_CASE_STUDIES: RelevelCaseStudy[] = [
+  {
+    title: "Uber Ride Fare Split Feature",
+    description: "Designed a comprehensive PRD for implementing fare splitting functionality in the Uber app, focusing on user experience and payment flow optimization."
+  },
+  {
+    title: "Khatabook Onboarding Flow",
+    description: "Built a detailed PRD for streamlining the user onboarding experience, reducing friction and improving user activation rates."
+  },
+  {
+    title: "MPL App Upgrade Module",
+    description: "Created a strategic PRD for implementing in-app upgrade triggers, balancing user experience with technical requirements."
+  },
+  {
+    title: "E-commerce Shopping Cart Button",
+    description: "Designed user-centric shopping cart functionality enabling multi-product review before checkout, enhancing conversion rates."
+  },
+  {
+    title: "Grocery App Growth Strategy",
+    description: "Developed comprehensive go-to-market strategy including feature identification, user targeting, and marketing planning for grocery app adoption."
+  },
+  {
+    title: "Trade with Tribe - Stock Market Platform",
+    description: "Conceptualized a verified expert-driven stock market platform with gamified learning elements and premium content strategy."
+  },
+  {
+    title: "Organic Food Product Vision Board",
+    description: "Created strategic product vision for premium organic ready-to-eat food brand, defining market positioning and brand identity."
+  },
+  {
+    title: "E-commerce Roadmap Prioritization",
+    description: "Analyzed and prioritized quarterly product requirements using strategic frameworks to optimize resource allocation and impact."
+  },
+  {
+    title: "Flipkart Growth Analysis",
+    description: "Conducted comprehensive research on Flipkart's growth journey, identifying key growth hacks and suggesting future growth strategies."
+  }
+];
+
 const CASE_STUDIES: CaseStudy[] = [
   {
     title: "HealthifyMe Funnel & Slot Optimization",
@@ -234,7 +278,7 @@ export function CaseStudiesSection() {
       <h2 className="text-3xl font-bold text-primary flex items-center gap-2 mb-2">
         <BookOpenCheck size={22} /> Case Studies
       </h2>
-      <div className="grid md:grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-2 gap-5 mb-6">
         {CASE_STUDIES.map((cs, idx) => (
           <Card key={idx} className="group transition hover:shadow-md">
             <Collapsible open={openStates[idx]} onOpenChange={() => toggleCase(idx)}>
@@ -264,6 +308,44 @@ export function CaseStudiesSection() {
             </Collapsible>
           </Card>
         ))}
+      </div>
+
+      {/* Relevel Case Studies Section */}
+      <div className="mt-8">
+        <Card className="bg-gradient-to-br from-indigo-50 to-purple-50 border-indigo-200">
+          <CardHeader>
+            <CardTitle className="text-xl text-indigo-900 flex items-center gap-2">
+              <BookOpenCheck size={20} />
+              Relevel Case Studies - Foundation Building (2022)
+            </CardTitle>
+            <CardDescription className="text-indigo-700">
+              During my time at Relevel, I solved numerous product management case studies that helped build my foundational understanding of PM principles, strategic thinking, and practical problem-solving approaches.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-2 gap-3">
+              {RELEVEL_CASE_STUDIES.map((study, idx) => (
+                <div key={idx} className="bg-white/70 rounded-lg p-3 border border-indigo-100">
+                  <h4 className="font-semibold text-sm text-indigo-800 mb-1">{study.title}</h4>
+                  <p className="text-xs text-muted-foreground">{study.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 pt-3 border-t border-indigo-200">
+              <p className="text-sm text-indigo-700 mb-2">
+                <strong>Key Learnings:</strong> These case studies helped me develop core PM skills including PRD writing, user research, strategic prioritization, growth hacking, and cross-functional collaboration.
+              </p>
+              <a
+                href="https://drive.google.com/drive/folders/1UhltaC8jCmecMgtef_0qTX2rRAMtVpZi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-indigo-700 text-white text-xs font-semibold hover:bg-indigo-800 transition"
+              >
+                View All Solutions <ChevronUp className="rotate-45" size={12} />
+              </a>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

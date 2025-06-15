@@ -45,7 +45,10 @@ export function Header() {
           </a>
         </Button>
         <Button size="icon" variant="outline" asChild>
-          <a aria-label="Resume PDF" href="https://drive.google.com/file/d/1-AzreiJmTk-nAZyfAavMv4zkuDETA4pN/view?usp=sharing" target="_blank" rel="noopener">
+          <a 
+            aria-label="Request Resume" 
+            href="mailto:saptarshi1799@gmail.com?subject=Request%20Resume&body=Hey%2C%20can%20I%20take%20a%20look%20at%20your%20resume%3F"
+          >
             <FileText size={20} />
           </a>
         </Button>

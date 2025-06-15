@@ -11,10 +11,10 @@ export function HeroSection() {
         />
         <div className="text-center lg:text-left max-w-xl">
           <h1 className="text-4xl font-extrabold leading-tight tracking-tighter text-primary mb-1">
-            Saptarshi Mukhopadhyay — Product Virtuoso Turning Curiosity Into Impact
+            Saptarshi Mukhopadhyay — Product Aspirant Turning Curiosity Into Impact
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed mb-3">
-            Sometimes I build bridges between business and tech—other times, I just build really helpful spreadsheets. If you value clever, data-powered solutions and the occasional witty comment in your standups, well, my inbox awaits.
+            Sometimes I build bridges between business and tech—other times, I just build really helpful spreadsheets. If you value clever, data-powered solutions and someone who actually enjoys digging into the details, well, my inbox awaits.
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
             <a
@@ -26,12 +26,10 @@ export function HeroSection() {
               Connect on LinkedIn
             </a>
             <a
-              href="https://drive.google.com/file/d/1-AzreiJmTk-nAZyfAavMv4zkuDETA4pN/view?usp=sharing"
-              target="_blank"
-              rel="noopener"
+              href="mailto:saptarshi1799@gmail.com?subject=Request%20Resume&body=Hey%2C%20can%20I%20take%20a%20look%20at%20your%20resume%3F"
               className="inline-block px-6 py-2 rounded-full border border-indigo-700 text-indigo-700 font-semibold hover:bg-indigo-50 transition"
             >
-              Download Resume
+              Request Resume
             </a>
           </div>
         </div>

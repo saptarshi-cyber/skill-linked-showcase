@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp, BookOpenCheck } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 type CaseStudy = {
   title: string;
@@ -220,9 +222,12 @@ const CASE_STUDIES: CaseStudy[] = [
   },
 ];
 
-// Only allow one open at a time, fix "multiple open" bug by using controlled index
 export function CaseStudiesSection() {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const [openStates, setOpenStates] = useState<boolean[]>(new Array(CASE_STUDIES.length).fill(false));
+
+  const toggleCase = (index: number) => {
+    setOpenStates(prev => prev.map((state, i) => i === index ? !state : state));
+  };
 
   return (
     <section id="case-studies" className="max-w-5xl mx-auto py-4">
@@ -231,36 +236,33 @@ export function CaseStudiesSection() {
       </h2>
       <div className="grid md:grid-cols-2 gap-5">
         {CASE_STUDIES.map((cs, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-xl border border-border shadow-sm relative p-5 group transition hover:shadow-md"
-          >
-            <button
-              className="w-full text-left"
-              onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-              aria-expanded={openIdx === idx}
-              aria-controls={`case-study-content-${idx}`}
-            >
-              <div className="flex items-center gap-2 justify-between">
-                <span className="font-semibold text-lg text-indigo-800">{cs.title}</span>
-                {openIdx === idx ? (
-                  <ChevronUp className="text-indigo-400" />
-                ) : (
-                  <ChevronDown className="text-indigo-400" />
-                )}
-              </div>
-              <div className="mt-3">{cs.problemStatement}</div>
-            </button>
-            {openIdx === idx &&
-              <div
-                id={`case-study-content-${idx}`}
-                className="animate-fade-in mt-4 border-t border-border pt-3"
-              >
-                <div>{cs.solutionSummary}</div>
-                <div className="mt-2">{cs.analysis}</div>
-              </div>
-            }
-          </div>
+          <Card key={idx} className="group transition hover:shadow-md">
+            <Collapsible open={openStates[idx]} onOpenChange={() => toggleCase(idx)}>
+              <CollapsibleTrigger asChild>
+                <CardHeader className="cursor-pointer">
+                  <div className="flex items-center gap-2 justify-between">
+                    <CardTitle className="text-lg text-indigo-800">{cs.title}</CardTitle>
+                    {openStates[idx] ? (
+                      <ChevronUp className="text-indigo-400" />
+                    ) : (
+                      <ChevronDown className="text-indigo-400" />
+                    )}
+                  </div>
+                  <CardDescription className="text-left">
+                    {cs.problemStatement}
+                  </CardDescription>
+                </CardHeader>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <CardContent className="pt-0 border-t border-border">
+                  <div className="mt-4">
+                    <div>{cs.solutionSummary}</div>
+                    <div className="mt-2">{cs.analysis}</div>
+                  </div>
+                </CardContent>
+              </CollapsibleContent>
+            </Collapsible>
+          </Card>
         ))}
       </div>
     </section>

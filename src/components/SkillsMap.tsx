@@ -1,5 +1,6 @@
+
 import { SkillTag } from "./SkillTag";
-import { EXPERIENCES, ALL_SKILLS } from "./ExperienceTimeline";
+import { EXPERIENCES, ALL_SKILLS, SKILL_DESCRIPTIONS } from "./ExperienceTimeline";
 import { useState } from "react";
 import { Star } from "lucide-react";
 
@@ -46,6 +47,11 @@ export function SkillsMap({
           <div className="mb-2 text-indigo-700 font-bold">
             Skill: {selectedSkill}
           </div>
+          {SKILL_DESCRIPTIONS[selectedSkill] && (
+            <div className="mb-3 text-sm text-indigo-600 italic">
+              {SKILL_DESCRIPTIONS[selectedSkill]}
+            </div>
+          )}
           <div className="text-sm text-muted-foreground">
             <ul className="ml-5 list-disc">
               {skillMap[selectedSkill]?.map(({ expIdx, achIdx }, n) => (

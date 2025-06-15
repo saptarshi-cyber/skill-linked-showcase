@@ -15,7 +15,7 @@ const EXPERIENCES: Experience[] = [
   {
     company: "Lifesight",
     role: "Product Analyst",
-    period: "June 2023 – January 2024",
+    period: "June 2023 – April 2025",
     description:
       "During my time at Lifesight, I spearheaded the end-to-end delivery of platform integrations and automated cloud operations, focusing on elevating both platform reliability and cost efficiency. I proactively collaborated with go-to-market and product teams to deliver impactful technical solutions and drive the adoption of new features. By streamlining internal reporting, optimizing big data pipelines, and leading testing initiatives, I significantly enhanced the value delivered to clients and empowered cross-functional teams to execute more effectively.",
     achievements: [
@@ -84,7 +84,7 @@ const EXPERIENCES: Experience[] = [
   {
     company: "Gauge",
     role: "Product Intern",
-    period: "January 2023 – May 2023",
+    period: "November 2022 – June 2023",
     description:
       "At Gauge, I drove the complete product development lifecycle, building an MVP from scratch and collaborating closely on designing user journeys, requirements gathering, and sprint planning. My role involved running user interviews, translating feedback into actionable feature priorities, and working closely with designers to create a unified UI/UX vision. Managing the team's delivery alongside the founder, I ensured the timely completion of key milestones through effective communication and deep functional knowledge.",
     achievements: [
@@ -181,9 +181,16 @@ export function ExperienceTimeline({
             <div>
               <span className="font-semibold text-lg text-primary">Product Analyst</span>
               <span className="mx-2 text-muted-foreground">@</span>
-              <span className="font-medium text-indigo-700">Lifesight</span>
+              <a 
+                href="https://lifesight.io" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-medium text-indigo-700 hover:underline"
+              >
+                Lifesight
+              </a>
             </div>
-            <span className="text-xs text-indigo-400">June 2023 – January 2024</span>
+            <span className="text-xs text-indigo-400">June 2023 – April 2025</span>
           </div>
           <div className="text-muted-foreground mb-2">
             I dived deep into platform integrations and automation at Lifesight—think of me as the backstage tech wizard who quietly slashed cloud costs, fast-tracked reporting, and made data pipelines behave. Whether it was helping new features find their audience (adoption is an art), revealing hidden bugs (cue internal testing adventures), or writing queries that make dashboards actually useful, I was in the thick of it. My superpower? Turning messy data situations into streamlined, client-delighting solutions that just work.
@@ -194,9 +201,16 @@ export function ExperienceTimeline({
             <div>
               <span className="font-semibold text-lg text-primary">Product Intern</span>
               <span className="mx-2 text-muted-foreground">@</span>
-              <span className="font-medium text-indigo-700">Gauge</span>
+              <a 
+                href="https://gauge.ro" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-medium text-indigo-700 hover:underline"
+              >
+                Gauge
+              </a>
             </div>
-            <span className="text-xs text-indigo-400">January 2023 – May 2023</span>
+            <span className="text-xs text-indigo-400">November 2022 – June 2023</span>
           </div>
           <div className="text-muted-foreground mb-2">
             At Gauge, I championed the "build a product from nothing but coffee and determination" approach. From sketching out 100+ wireframes (yes, my design tools got a workout), to translating user feedback into features that users actually wanted, I kept our scrappy project on-track. Every day was part strategy session, part creative problem-solving, and a lot of "how do we make this work with our constraints?"—the real product management experience.

@@ -26,7 +26,7 @@ export function HeroSection() {
             Hey, I'm <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Saptarshi</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed mb-6">
-            Product enthusiast turning curiosity into impact. I build bridges between business needs and tech solutions—plus I actually enjoy the details.
+            Turning Curiosity Into Impact. I build bridges between business needs and tech solutions—plus I actually enjoy the details.
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
             <a

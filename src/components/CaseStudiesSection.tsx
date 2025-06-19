@@ -157,113 +157,6 @@ const CASE_STUDIES: CaseStudy[] = [
       </div>
     ),
   },
-  {
-    title: "Customer Feedback & Sentiment Analysis for Fashion E-Commerce",
-    problemStatement: (
-      <div>
-        <strong>Problem Statement:</strong>
-        <ul className="list-disc ml-6 text-sm mt-2">
-          <li>
-            Design and prototype a web platform that simulates collecting and analyzing customer feedback (reviews/ratings) from major Indian fashion e-commerce sites. Actual data collection should be simulated or mocked.
-          </li>
-          <li>
-            Leverage AI to automatically categorize feedback sentiment (positive/neutral/negative) and extract actionable insights for brands and sellers.
-          </li>
-          <li>
-            Deliverables included an interactive prototype with authentication, feedback collection, sentiment analysis, visualizations, and supporting documentation explaining design, assumptions, and challenges.
-          </li>
-        </ul>
-      </div>
-    ),
-    solutionSummary: (
-      <div>
-        <strong>Solution Approach:</strong>
-        <ul className="list-disc ml-6 text-sm mb-3">
-          <li>
-            <b>Framework & Mock Platform:</b> Researched typical e-commerce user journeys and built a mock web prototype simulating product discovery through review submission (<a href="https://kzmkha9x951b6l77bxhr.lite.vusercontent.net/products" className="underline text-indigo-700" target="_blank" rel="noopener noreferrer">Prototype</a>).
-          </li>
-          <li>
-            <b>Synthetic Data Generation:</b> Used an LLM (GPT-3.5) to generate realistic order/review data for an Indian fashion retailer, simulating fields like product specs, customer profile, star ratings, review text, and image uploads (<a className="underline text-indigo-700" href="https://docs.google.com/spreadsheets/d/18aO-S0EvJeEognXCEJxXFySD36jAuJ99KA9E55QvK6I/edit?gid=276365533#gid=276365533" target="_blank" rel="noopener noreferrer">reviewData_fashion</a>).
-          </li>
-          <li>
-            <b>AI/NLP Sentiment Analysis:</b> Used NLP techniques in a no-code environment to categorize sentiment and extract trends. Highlighted actionable insights using aspect-based sentiment (Fit, Quality, etc.) and keyword clustering. (See <a className="underline text-indigo-700" href="https://colab.research.google.com/drive/1Zt4RJAKEsvjm1GNIKeOPyf-CIJoy0W5E#scrollTo=_WkDLWF9RfqW" target="_blank" rel="noopener noreferrer">Analysis Notebook</a>).
-          </li>
-          <li>
-            <b>Dashboard & Visualization:</b> Created dashboards and charts showing product KPIs, review trends, sentiment distribution, and actionable recommendations for brands/sellers (<a className="underline text-indigo-700" href="https://drive.google.com/drive/u/0/folders/1Sod--sETyP0cGdMQtZfQCSJrHsxnUznO" target="_blank" rel="noopener noreferrer">Visualizations</a>).
-          </li>
-          <li>
-            <b>Additional Features:</b> Added review summaries for each product, "Discover your Style" suggestions, and crafted a UI closely aligned with real user journeys.
-          </li>
-        </ul>
-        <div className="flex flex-wrap gap-4 text-xs mt-2">
-          <a
-            className="underline text-indigo-700 hover:opacity-80 transition"
-            href="https://kzmkha9x951b6l77bxhr.lite.vusercontent.net/products"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Web Prototype
-          </a>
-          <a
-            className="underline text-indigo-700 hover:opacity-80 transition"
-            href="https://docs.google.com/spreadsheets/d/18aO-S0EvJeEognXCEJxXFySD36jAuJ99KA9E55QvK6I/edit?gid=276365533#gid=276365533"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Synthetic Data (CSV)
-          </a>
-          <a
-            className="underline text-indigo-700 hover:opacity-80 transition"
-            href="https://colab.research.google.com/drive/1Zt4RJAKEsvjm1GNIKeOPyf-CIJoy0W5E#scrollTo=_WkDLWF9RfqW"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            AI/NLP Analysis
-          </a>
-          <a
-            className="underline text-indigo-700 hover:opacity-80 transition"
-            href="https://drive.google.com/drive/u/0/folders/1Sod--sETyP0cGdMQtZfQCSJrHsxnUznO"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visualizations
-          </a>
-          <a
-            className="underline text-indigo-700 hover:opacity-80 transition"
-            href="https://docs.google.com/document/d/1VoPkFATLqW58InuHzAl666O1vaMboZqhjMgodTcqJE0/edit?tab=t.0"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Solution Doc (Google Doc)
-          </a>
-        </div>
-      </div>
-    ),
-    analysis: (
-      <div>
-        <strong>Reflection & Takeaways:</strong>
-        <ul className="list-disc ml-6 text-sm mt-1">
-          <li>
-            <b>Holistic Approach:</b> Combined AI-powered analytics with practical UX flows, simulating a real-world SaaS feedback solution—valuable for both users and business stakeholders.
-          </li>
-          <li>
-            <b>User-Centric Design:</b> Prioritized clear review flows, minimal friction, and useful post-review experiences (thank you, rewards, recommendations).
-          </li>
-          <li>
-            <b>Analytical Rigor:</b> Created in-depth metrics tracking product performance, customer sentiment, aspect-based trends, and key pain points/praises to inform brand decisions.
-          </li>
-          <li>
-            <b>Key Learnings:</b> Mocking rich, multi-dimensional data using LLMs enabled rapid iteration. Simulated dashboards and NLP approaches proved effective for product storytelling, even in low-code/no-code contexts.
-          </li>
-          <li>
-            <span className="italic">
-              Explore the prototype and docs above for a complete experience — happy to discuss how this can be extended to real-world deployments!
-            </span>
-          </li>
-        </ul>
-      </div>
-    ),
-  },
 ];
 
 export function CaseStudiesSection() {
@@ -278,7 +171,7 @@ export function CaseStudiesSection() {
       <h2 className="text-3xl font-bold text-primary flex items-center gap-2 mb-2">
         <BookOpenCheck size={22} /> Case Studies
       </h2>
-      <div className="grid md:grid-cols-2 gap-5 mb-6">
+      <div className="grid md:grid-cols-1 gap-5 mb-6">
         {CASE_STUDIES.map((cs, idx) => (
           <Card key={idx} className="group transition hover:shadow-md">
             <Collapsible open={openStates[idx]} onOpenChange={() => toggleCase(idx)}>

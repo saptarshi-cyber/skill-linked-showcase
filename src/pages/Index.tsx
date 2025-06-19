@@ -8,6 +8,7 @@ import { CaseStudiesSection } from "../components/CaseStudiesSection";
 import { ProjectShowcase } from "../components/ProjectShowcase";
 import { AboutBlock } from "../components/AboutBlock";
 import { CertificationsSection } from "../components/CertificationsSection";
+import { LinkedInPost } from "../components/LinkedInPost";
 import { ALL_SKILLS } from "../components/ExperienceTimeline";
 
 const sectionSpacing = "py-4 sm:py-6 lg:py-7";
@@ -37,6 +38,9 @@ const Index = () => {
         </section>
         <section className={sectionSpacing} style={{ width: "100%" }}>
           <CertificationsSection />
+        </section>
+        <section className={sectionSpacing} style={{ width: "100%" }}>
+          <LinkedInPost />
         </section>
       </main>
       <div className="text-center mt-4 sm:mt-5 text-xs text-muted-foreground pb-3">

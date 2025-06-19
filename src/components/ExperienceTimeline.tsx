@@ -1,3 +1,4 @@
+
 import { SkillTag } from "./SkillTag";
 import { Briefcase } from "lucide-react";
 
@@ -20,43 +21,43 @@ const EXPERIENCES: Experience[] = [
     achievements: [
       {
         text: "Developed R/ETL workflows for major CRMs, E-commerce, and Ad platforms, contributing to 33% of platform integrations.",
-        skills: ["ETL", "CRM", "E-commerce", "Ad Tech", "Integrations"],
+        skills: ["ETL", "Integration", "Data Analytics"],
       },
       {
         text: "Implemented automated sanity checks, reducing cloud costs for repetitive tasks by 50%.",
-        skills: ["Google Cloud", "Cost Optimization", "Python"],
+        skills: ["Google Cloud", "Automation", "Python"],
       },
       {
         text: "Led dogfooding project for internal testing; surfaced issues and communicated actionable insights to marketing & sales.",
-        skills: ["Internal Testing", "QA", "Cross-Team Collaboration"],
+        skills: ["User Research", "Cross-Team Collaboration", "Communication"],
       },
       {
         text: "Launched Custom API feature, improving adoptability by 15% for bespoke data sources.",
-        skills: ["API", "Product Adoption"],
+        skills: ["API", "Product Development"],
       },
       {
         text: "Automated exception handling for integrations, reducing errors by 33%.",
-        skills: ["Integration", "Automation", "Error Handling"],
+        skills: ["Integration", "Automation", "Problem Solving"],
       },
       {
         text: "Created detailed PRDs and workflow demos, reducing dependency on engineering by 25%.",
-        skills: ["PRD Writing", "Business Analysis", "Documentation"],
+        skills: ["PRD Writing", "Business Analysis", "Requirements Analysis"],
       },
       {
         text: "Deployed GTM containers with custom events, boosting platform trust by 20%.",
-        skills: ["Tag Management", "Event Tracking", "GTM"],
+        skills: ["Product Analytics", "Data Analytics"],
       },
       {
         text: "Enhanced MMM models with Halo effect & Commute zones, improving prediction accuracy by 5%.",
-        skills: ["MMM", "Data Modeling", "Product Analytics"],
+        skills: ["Data Modeling", "Product Analytics"],
       },
       {
         text: "Wrote go-to SQL queries for dashboards, reducing monitoring time by 30%.",
-        skills: ["SQL", "Dashboarding", "Data Monitoring"],
+        skills: ["SQL", "Dashboarding"],
       },
       {
         text: "Created internal knowledge base for resolving client errors, reducing response time by 40%.",
-        skills: ["Knowledge Base", "Client Support", "Process Improvement"],
+        skills: ["Process Improvement", "Communication"],
       },
       {
         text: "Led market research for product roadmap deliverables to enable effective decision making.",
@@ -64,19 +65,19 @@ const EXPERIENCES: Experience[] = [
       },
       {
         text: "Coordinated rollout of 10+ features with SPMs, designers, and developers in 1 year.",
-        skills: ["Feature Launch", "Stakeholder Management", "Agile"],
+        skills: ["Agile", "Stakeholder Management", "Team Collaboration"],
       },
       {
         text: "Used Meltano to build efficient ETL pipelines and completed Snowflake-to-BigQuery integration, unlocking cost-effective workflows.",
-        skills: ["Meltano", "Snowflake", "BigQuery", "ETL"],
+        skills: ["ETL", "Google Cloud", "Data Analytics"],
       },
       {
         text: "Built user segment insights to connect platform usage with key KPIs.",
-        skills: ["Segmentation", "KPI Analysis", "Data Analytics"],
+        skills: ["KPI Analysis", "Data Analytics", "Product Analytics"],
       },
       {
         text: "Maintained strong client relationships for effective partnerships.",
-        skills: ["Client Relations", "Communication"],
+        skills: ["Communication", "Stakeholder Management"],
       },
     ],
   },
@@ -89,35 +90,35 @@ const EXPERIENCES: Experience[] = [
     achievements: [
       {
         text: "Drove end-to-end product development from ideation to MVP (till testing phase).",
-        skills: ["Product Development", "MVP", "Lifecycle Management"],
+        skills: ["Product Development", "MVP"],
       },
       {
         text: "Mapped full user journey (order to inventory), defining API endpoints and requirements.",
-        skills: ["User Journey", "API", "Workflow Mapping"],
+        skills: ["User Journey", "API", "Requirements Analysis"],
       },
       {
         text: "Designed 100+ wireframes and user stories, covering application scenarios and edge cases.",
-        skills: ["Wireframing", "User Stories", "UX Design"],
+        skills: ["Wireframing", "User Stories"],
       },
       {
         text: "Collaborated with designers to create and finalize the app's first style guide.",
-        skills: ["Design Collaboration", "Style Guides"],
+        skills: ["Cross-Team Collaboration", "Product Development"],
       },
       {
         text: "Prioritized features after in-depth user interviews and market research.",
-        skills: ["User Interviews", "Market Research", "Feature Prioritization"],
+        skills: ["User Research", "Market Research", "Feature Prioritization"],
       },
       {
         text: "Wrote clear user stories for developers and ran weekly sprint planning with the founder.",
-        skills: ["Sprint Planning", "Story Writing", "Team Collaboration"],
+        skills: ["Agile", "User Stories", "Team Collaboration"],
       },
       {
         text: "Led daily sync-ups to manage team tasks, clear blockers, and meet delivery timelines.",
-        skills: ["Team Management", "Scrum", "Problem Solving"],
+        skills: ["Stakeholder Management", "Problem Solving"],
       },
       {
         text: "Formulated user flows to define API endpoints and improve requirement clarity using Postman for testing.",
-        skills: ["User Flows", "API", "Postman"],
+        skills: ["User Journey", "API"],
       },
       {
         text: "Ensured deep functional understanding of the product before implementation.",
@@ -127,35 +128,32 @@ const EXPERIENCES: Experience[] = [
   },
 ];
 
-// Deduplicated and expanded ALL_SKILLS set with technical skills added
+// Optimized skills list - reduced from 67 to 33 high-demand skills for Product Analyst/APM roles
 const ALL_SKILLS = [
-  "Ad Tech", "Agile", "API", "Automation", "BigQuery", "Business Analysis", 
-  "Client Relations", "Communication", "Cost Optimization", "CRM", 
-  "Cross-Team Collaboration", "Data Analytics", "Data Modeling", "Data Monitoring",
-  "Dashboarding", "Design Collaboration", "Documentation", "E-commerce", 
-  "Error Handling", "ETL", "Event Tracking", "Feature Launch", "Feature Prioritization",
-  "Google Cloud", "GTM", "Integration", "Integrations", "Internal Testing", 
-  "KPI Analysis", "Knowledge Base", "Lifecycle Management", "Market Research",
-  "Meltano", "MMM", "MVP", "PRD Writing", "Postman", "Problem Solving", 
-  "Process Improvement", "Product Adoption", "Product Analytics", "Product Development",
-  "Product Roadmap", "Product Understanding", "Python", "QA", "Requirements Analysis",
-  "Scrum", "Segmentation", "Snowflake", "SQL", "Stakeholder Management", 
-  "Story Writing", "Style Guides", "Tag Management", "Team Collaboration", 
-  "Team Management", "UX Design", "User Flows", "User Interviews", "User Journey", 
-  "User Stories", "Wireframing", "Workflow Mapping"
+  "SQL", "Product Analytics", "Data Analytics", "A/B Testing", "Agile", 
+  "Stakeholder Management", "User Research", "Product Roadmap", "KPI Analysis", 
+  "PRD Writing", "Python", "API", "User Journey", "Feature Prioritization", 
+  "Market Research", "Cross-Team Collaboration", "Business Analysis", "Data Modeling", 
+  "Product Development", "Communication", "ETL", "Google Cloud", "Dashboarding", 
+  "User Stories", "Wireframing", "MVP", "Problem Solving", "Requirements Analysis", 
+  "Process Improvement", "Automation", "Integration", "Product Understanding", 
+  "Team Collaboration"
 ];
 
-// Skills descriptions for the map
+// Skills descriptions for the map - updated for optimized skills
 const SKILL_DESCRIPTIONS: { [skill: string]: string } = {
+  "A/B Testing": "Designing and analyzing controlled experiments to validate product hypotheses and optimize user experience",
   "API": "Designing, testing, and integrating RESTful APIs for seamless data exchange between systems",
   "Google Cloud": "Leveraging GCP services for scalable cloud infrastructure, data processing, and cost optimization",
-  "Postman": "API testing, documentation, and collaboration tool for ensuring reliable integrations",
   "Python": "Scripting for automation, data processing, and building analytical workflows",
   "SQL": "Querying databases to extract insights, build reports, and support data-driven decisions",
   "ETL": "Building data pipelines to extract, transform, and load data for analytics and reporting",
-  "Integrations": "Connecting diverse platforms and systems to create unified data workflows",
-  "Team Collaboration": "Working effectively across cross-functional teams to deliver shared outcomes",
-  "Team Management": "Leading and coordinating team efforts to meet project deadlines and objectives"
+  "User Research": "Conducting user interviews, surveys, and usability testing to understand user needs and behaviors",
+  "Product Analytics": "Using data to measure product performance, user engagement, and business impact",
+  "Data Analytics": "Analyzing complex datasets to derive actionable insights for product and business decisions",
+  "Stakeholder Management": "Building relationships and aligning diverse stakeholders around product vision and priorities",
+  "PRD Writing": "Creating comprehensive product requirement documents that clearly communicate feature specifications",
+  "Product Roadmap": "Strategic planning and prioritization of product features and initiatives over time"
 };
 
 export function ExperienceTimeline({

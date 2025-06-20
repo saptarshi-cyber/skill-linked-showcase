@@ -17,7 +17,7 @@ const EXPERIENCES: Experience[] = [
     role: "Product Analyst",
     period: "June 2023 – April 2025",
     description:
-      "During my time at Lifesight, I spearheaded the end-to-end delivery of platform integrations and automated cloud operations, focusing on elevating both platform reliability and cost efficiency. I proactively collaborated with go-to-market and product teams to deliver impactful technical solutions and drive the adoption of new features. By streamlining internal reporting, optimizing big data pipelines, and leading testing initiatives, I significantly enhanced the value delivered to clients and empowered cross-functional teams to execute more effectively.",
+      "Spearheaded platform integrations and cloud automation, boosting reliability and cutting costs. Collaborated with GTM teams to drive feature adoption while streamlining reporting and optimizing data pipelines.",
     achievements: [
       {
         text: "Developed R/ETL workflows for major CRMs, E-commerce, and Ad platforms, contributing to 33% of platform integrations.",
@@ -86,7 +86,7 @@ const EXPERIENCES: Experience[] = [
     role: "Product Intern",
     period: "November 2022 – June 2023",
     description:
-      "At Gauge, I drove the complete product development lifecycle, building an MVP from scratch and collaborating closely on designing user journeys, requirements gathering, and sprint planning. My role involved running user interviews, translating feedback into actionable feature priorities, and working closely with designers to create a unified UI/UX vision. Managing the team's delivery alongside the founder, I ensured the timely completion of key milestones through effective communication and deep functional knowledge.",
+      "Drove complete product development from ideation to MVP, designing user journeys and managing sprint delivery. Ran user interviews and collaborated with designers to create the app's foundational experience.",
     achievements: [
       {
         text: "Drove end-to-end product development from ideation to MVP (till testing phase).",
@@ -164,62 +164,47 @@ export function ExperienceTimeline({
   setSelectedSkill?: (skill: string | undefined) => void;
 }) {
   return (
-    <section id="experience" className="my-4 sm:my-6 max-w-5xl mx-auto px-4 sm:px-6">
-      <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-1 flex items-center gap-1">
-        <Briefcase className="inline mr-1" size={20} />
-        Experience
-      </h2>
-      <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">
-        Looking for a taste of my journey? Here's the highlight reel—the good, the great, and the "wait, how did I pull that off?" moments. For the full story, feel free to <a href="mailto:saptarshi1799@gmail.com?subject=Request%20Resume&body=Hey%2C%20can%20I%20take%20a%20look%20at%20your%20resume%3F" className="underline text-indigo-700 hover:opacity-80">request my resume</a>.
-      </p>
-      <div className="flex flex-col gap-4 sm:gap-5">
-        <div className="bg-card/60 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition">
-          <div className="flex flex-col gap-2 pb-2 border-b mb-2">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="font-semibold text-base sm:text-lg text-primary">Product Analyst</span>
-                <div className="flex items-center">
-                  <span className="text-muted-foreground text-sm sm:text-base">@</span>
-                  <a 
-                    href="https://lifesight.io" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="font-medium text-indigo-700 hover:underline ml-1 text-sm sm:text-base"
-                  >
-                    Lifesight
-                  </a>
+    <section id="experience" className="my-4 sm:my-6 max-w-5xl mx-auto px-4 sm:px-6 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-20 animate-pulse" />
+      <div className="absolute bottom-20 left-10 w-16 h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full opacity-25 animate-bounce" style={{animationDelay: '1.5s'}} />
+      
+      <div className="relative z-10">
+        <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-1 flex items-center gap-1 animate-fade-in">
+          <Briefcase className="inline mr-1 animate-pulse" size={20} />
+          Experience
+        </h2>
+        <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed animate-fade-in" style={{animationDelay: '0.1s'}}>
+          The highlight reel—key wins and impact moments. For the complete story, feel free to <a href="mailto:saptarshi1799@gmail.com?subject=Request%20Resume&body=Hey%2C%20can%20I%20take%20a%20look%20at%20your%20resume%3F" className="underline text-indigo-700 hover:opacity-80 transition-opacity">request my resume</a>.
+        </p>
+        
+        <div className="flex flex-col gap-4 sm:gap-5">
+          {EXPERIENCES.map((exp, idx) => (
+            <div key={idx} className="bg-gradient-to-br from-card/60 to-blue-50/30 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition-all duration-300 hover:shadow-xl animate-fade-in" style={{animationDelay: `${idx * 0.1}s`}}>
+              <div className="flex flex-col gap-2 pb-2 border-b mb-2">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <span className="font-semibold text-base sm:text-lg text-primary">{exp.role}</span>
+                    <div className="flex items-center">
+                      <span className="text-muted-foreground text-sm sm:text-base">@</span>
+                      <a 
+                        href={exp.company === "Lifesight" ? "https://lifesight.io" : "https://gauge.ro"} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-medium text-indigo-700 hover:underline ml-1 text-sm sm:text-base transition-colors hover:text-indigo-900"
+                      >
+                        {exp.company}
+                      </a>
+                    </div>
+                  </div>
+                  <span className="text-xs text-indigo-400 font-medium bg-indigo-50 px-2 py-1 rounded-full">{exp.period}</span>
                 </div>
               </div>
-              <span className="text-xs text-indigo-400">June 2023 – April 2025</span>
-            </div>
-          </div>
-          <div className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            I dived deep into platform integrations and automation at Lifesight—think of me as the backstage tech wizard who quietly slashed cloud costs, fast-tracked reporting, and made data pipelines behave. Whether it was helping new features find their audience (adoption is an art), revealing hidden bugs (cue internal testing adventures), or writing queries that make dashboards actually useful, I was in the thick of it. My superpower? Turning messy data situations into streamlined, client-delighting solutions that just work.
-          </div>
-        </div>
-        <div className="bg-card/60 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition">
-          <div className="flex flex-col gap-2 pb-2 border-b mb-2">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="font-semibold text-base sm:text-lg text-primary">Product Intern</span>
-                <div className="flex items-center">
-                  <span className="text-muted-foreground text-sm sm:text-base">@</span>
-                  <a 
-                    href="https://gauge.ro" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="font-medium text-indigo-700 hover:underline ml-1 text-sm sm:text-base"
-                  >
-                    Gauge
-                  </a>
-                </div>
+              <div className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                {exp.description}
               </div>
-              <span className="text-xs text-indigo-400">November 2022 – June 2023</span>
             </div>
-          </div>
-          <div className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            At Gauge, I championed the "build a product from nothing but coffee and determination" approach. From sketching out 100+ wireframes (yes, my design tools got a workout), to translating user feedback into features that users actually wanted, I kept our scrappy project on-track. Every day was part strategy session, part creative problem-solving, and a lot of "how do we make this work with our constraints?"—the real product management experience.
-          </div>
+          ))}
         </div>
       </div>
     </section>

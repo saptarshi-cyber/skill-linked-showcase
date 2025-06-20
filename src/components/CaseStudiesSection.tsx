@@ -26,10 +26,6 @@ const RELEVEL_CASE_STUDIES: RelevelCaseStudy[] = [
     description: "Built a detailed PRD for streamlining the user onboarding experience, reducing friction and improving user activation rates."
   },
   {
-    title: "MPL App Upgrade Module",
-    description: "Created a strategic PRD for implementing in-app upgrade triggers, balancing user experience with technical requirements."
-  },
-  {
     title: "E-commerce Shopping Cart Button",
     description: "Designed user-centric shopping cart functionality enabling multi-product review before checkout, enhancing conversion rates."
   },
@@ -167,78 +163,99 @@ export function CaseStudiesSection() {
   };
 
   return (
-    <section id="case-studies" className="max-w-5xl mx-auto py-4">
-      <h2 className="text-3xl font-bold text-primary flex items-center gap-2 mb-2">
-        <BookOpenCheck size={22} /> Case Studies
-      </h2>
-      <div className="grid md:grid-cols-1 gap-5 mb-6">
-        {CASE_STUDIES.map((cs, idx) => (
-          <Card key={idx} className="group transition hover:shadow-md">
-            <Collapsible open={openStates[idx]} onOpenChange={() => toggleCase(idx)}>
-              <CollapsibleTrigger asChild>
-                <CardHeader className="cursor-pointer">
-                  <div className="flex items-center gap-2 justify-between">
-                    <CardTitle className="text-lg text-indigo-800">{cs.title}</CardTitle>
-                    {openStates[idx] ? (
-                      <ChevronUp className="text-indigo-400" />
-                    ) : (
-                      <ChevronDown className="text-indigo-400" />
-                    )}
-                  </div>
-                  <CardDescription className="text-left">
-                    {cs.problemStatement}
-                  </CardDescription>
-                </CardHeader>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <CardContent className="pt-0 border-t border-border">
-                  <div className="mt-4">
-                    <div>{cs.solutionSummary}</div>
-                    <div className="mt-2">{cs.analysis}</div>
-                  </div>
-                </CardContent>
-              </CollapsibleContent>
-            </Collapsible>
-          </Card>
-        ))}
-      </div>
+    <section id="case-studies" className="max-w-5xl mx-auto py-4 px-4 sm:px-6">
+      <div className="relative overflow-hidden">
+        {/* Floating background elements */}
+        <div className="absolute top-0 left-1/4 w-32 h-32 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full opacity-30 animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-25 animate-bounce" style={{animationDelay: '2s'}} />
+        
+        <div className="relative z-10">
+          <h2 className="text-3xl font-bold text-primary flex items-center gap-2 mb-6 animate-fade-in">
+            <BookOpenCheck size={22} className="animate-pulse" /> 
+            Case Studies
+          </h2>
+          
+          <div className="grid md:grid-cols-1 gap-6 mb-8">
+            {CASE_STUDIES.map((cs, idx) => (
+              <Card key={idx} className="group transition-all duration-300 hover:shadow-xl hover:scale-[1.02] bg-gradient-to-br from-white to-blue-50/30 border-0 shadow-lg animate-fade-in" style={{animationDelay: `${idx * 0.1}s`}}>
+                <Collapsible open={openStates[idx]} onOpenChange={() => toggleCase(idx)}>
+                  <CollapsibleTrigger asChild>
+                    <CardHeader className="cursor-pointer hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-300 rounded-t-lg">
+                      <div className="flex items-center gap-2 justify-between">
+                        <CardTitle className="text-lg text-indigo-800 group-hover:text-indigo-900 transition-colors">
+                          {cs.title}
+                        </CardTitle>
+                        <div className="transform transition-transform duration-300 group-hover:scale-110">
+                          {openStates[idx] ? (
+                            <ChevronUp className="text-indigo-400" />
+                          ) : (
+                            <ChevronDown className="text-indigo-400" />
+                          )}
+                        </div>
+                      </div>
+                      <CardDescription className="text-left">
+                        {cs.problemStatement}
+                      </CardDescription>
+                    </CardHeader>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="animate-accordion-down">
+                    <CardContent className="pt-0 border-t border-border/50">
+                      <div className="mt-4 space-y-4">
+                        <div className="animate-fade-in">{cs.solutionSummary}</div>
+                        <div className="animate-fade-in" style={{animationDelay: '0.1s'}}>{cs.analysis}</div>
+                      </div>
+                    </CardContent>
+                  </CollapsibleContent>
+                </Collapsible>
+              </Card>
+            ))}
+          </div>
 
-      {/* Relevel Case Studies Section */}
-      <div className="mt-8">
-        <Card className="bg-gradient-to-br from-indigo-50 to-purple-50 border-indigo-200">
-          <CardHeader>
-            <CardTitle className="text-xl text-indigo-900 flex items-center gap-2">
-              <BookOpenCheck size={20} />
-              Relevel Case Studies - Foundation Building (2022)
-            </CardTitle>
-            <CardDescription className="text-indigo-700">
-              During my time at Relevel, I solved numerous product management case studies that helped build my foundational understanding of PM principles, strategic thinking, and practical problem-solving approaches.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-3">
-              {RELEVEL_CASE_STUDIES.map((study, idx) => (
-                <div key={idx} className="bg-white/70 rounded-lg p-3 border border-indigo-100">
-                  <h4 className="font-semibold text-sm text-indigo-800 mb-1">{study.title}</h4>
-                  <p className="text-xs text-muted-foreground">{study.description}</p>
+          {/* Relevel Case Studies Section */}
+          <div className="mt-10 animate-fade-in" style={{animationDelay: '0.3s'}}>
+            <Card className="bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 border-indigo-200 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] relative overflow-hidden">
+              {/* Animated background pattern */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)] animate-pulse" />
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-purple-100 to-transparent rounded-full opacity-50 animate-bounce" style={{animationDelay: '1s'}} />
+              
+              <CardHeader className="relative z-10">
+                <CardTitle className="text-xl text-indigo-900 flex items-center gap-2">
+                  <BookOpenCheck size={20} className="animate-pulse" />
+                  Relevel Case Studies - Foundation Building (2022)
+                </CardTitle>
+                <CardDescription className="text-indigo-700">
+                  During my time at Relevel, I solved numerous product management case studies that helped build my foundational understanding of PM principles, strategic thinking, and practical problem-solving approaches.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="relative z-10">
+                <div className="grid md:grid-cols-2 gap-4">
+                  {RELEVEL_CASE_STUDIES.map((study, idx) => (
+                    <div key={idx} className="bg-white/70 backdrop-blur-sm rounded-lg p-4 border border-indigo-100 hover:bg-white/80 transition-all duration-300 hover:scale-105 hover:shadow-md animate-fade-in" style={{animationDelay: `${idx * 0.05}s`}}>
+                      <h4 className="font-semibold text-sm text-indigo-800 mb-2">{study.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{study.description}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <div className="mt-4 pt-3 border-t border-indigo-200">
-              <p className="text-sm text-indigo-700 mb-2">
-                <strong>Key Learnings:</strong> These case studies helped me develop core PM skills including PRD writing, user research, strategic prioritization, growth hacking, and cross-functional collaboration.
-              </p>
-              <a
-                href="https://drive.google.com/drive/folders/1UhltaC8jCmecMgtef_0qTX2rRAMtVpZi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-indigo-700 text-white text-xs font-semibold hover:bg-indigo-800 transition"
-              >
-                View All Solutions <ChevronUp className="rotate-45" size={12} />
-              </a>
-            </div>
-          </CardContent>
-        </Card>
+                <div className="mt-6 pt-4 border-t border-indigo-200">
+                  <p className="text-sm text-indigo-700 mb-3">
+                    <strong>Key Learnings:</strong> These case studies helped me develop core PM skills including PRD writing, user research, strategic prioritization, growth hacking, and cross-functional collaboration.
+                  </p>
+                  <div className="bg-indigo-100/50 rounded-lg p-3 border border-indigo-200">
+                    <p className="text-sm text-indigo-800 font-medium">
+                      💡 Interested in detailed solutions? 
+                      <a 
+                        href="mailto:saptarshi1799@gmail.com?subject=Request%20Relevel%20Case%20Study%20Solutions&body=Hi%20Saptarshi%2C%0A%0AI%27d%20love%20to%20see%20your%20detailed%20solutions%20for%20the%20Relevel%20case%20studies.%20Could%20you%20please%20share%20them%3F%0A%0AThanks%21"
+                        className="ml-1 underline text-indigo-700 hover:text-indigo-900 transition-colors font-semibold"
+                      >
+                        Request them here
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "../components/Header";
 import { HeroSection } from "../components/HeroSection";
 import { SkillsMap } from "../components/SkillsMap";
@@ -14,15 +14,23 @@ const sectionSpacing = "py-6 sm:py-8 lg:py-10";
 
 const Index = () => {
   const [selectedSkill, setSelectedSkill] = useState<string | undefined>(ALL_SKILLS[0]);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="bg-gradient-to-br from-background via-blue-50/20 to-indigo-50/30 min-h-screen flex flex-col relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Enhanced animated background elements */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/6 w-32 h-32 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full opacity-20 animate-pulse" />
-        <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-15 animate-bounce" style={{animationDelay: '2s'}} />
-        <div className="absolute top-1/2 right-1/6 w-20 h-20 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full opacity-25 animate-pulse" style={{animationDelay: '1s'}} />
-        <div className="absolute bottom-1/4 left-1/3 w-28 h-28 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-full opacity-20 animate-bounce" style={{animationDelay: '3s'}} />
+        <div className="absolute top-1/4 left-1/6 w-32 h-32 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full opacity-20 animate-pulse" style={{transform: `translateY(${scrollY * 0.1}px)`}} />
+        <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-15 animate-bounce" style={{animationDelay: '2s', transform: `translateY(${scrollY * -0.05}px)`}} />
+        <div className="absolute top-1/2 right-1/6 w-20 h-20 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full opacity-25 animate-pulse" style={{animationDelay: '1s', transform: `translateY(${scrollY * 0.08}px)`}} />
+        <div className="absolute bottom-1/4 left-1/3 w-28 h-28 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-full opacity-20 animate-bounce" style={{animationDelay: '3s', transform: `translateY(${scrollY * -0.03}px)`}} />
+        <div className="absolute top-10 right-10 w-16 h-16 bg-gradient-to-br from-orange-100 to-red-100 rounded-full opacity-30 animate-pulse" style={{animationDelay: '4s', transform: `translateY(${scrollY * 0.12}px)`}} />
       </div>
       
       <Header />

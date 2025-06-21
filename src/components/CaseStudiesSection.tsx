@@ -1,4 +1,5 @@
-import { BookOpen, ExternalLink, ArrowRight, Lightbulb, Target, TrendingUp } from "lucide-react";
+
+import { BookOpen, ExternalLink, ArrowRight, Lightbulb, Target, TrendingUp, Users, Zap, Award } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 function CaseStudyCard({ study, idx }: { study: any; idx: number }) {
@@ -89,6 +90,54 @@ const CASE_STUDIES = [
       }
     ],
     skills: ["ETL", "Integration", "Google Cloud", "Automation", "API Development", "Cost Optimization"]
+  },
+  {
+    title: "Consumer Engagement & Retention",
+    company: "Healthify",
+    period: "2022-2023",
+    description: "Spearheaded consumer engagement initiatives that significantly improved user retention and platform stickiness through data-driven product strategies.",
+    highlights: [
+      {
+        icon: <Users className="w-3 h-3 text-white" />,
+        title: "User Retention Strategy",
+        description: "Developed comprehensive engagement frameworks that increased user retention by 25%"
+      },
+      {
+        icon: <Zap className="w-3 h-3 text-white" />,
+        title: "Feature Development",
+        description: "Led cross-functional teams to launch key features improving user experience"
+      },
+      {
+        icon: <TrendingUp className="w-3 h-3 text-white" />,
+        title: "Data-Driven Insights",
+        description: "Implemented analytics frameworks to track user behavior and optimize product features"
+      }
+    ],
+    skills: ["Product Strategy", "User Engagement", "Data Analytics", "Cross-functional Leadership", "Feature Development"]
+  },
+  {
+    title: "Educational Platform Enhancement",
+    company: "Relevel by Unacademy",
+    period: "2021-2022",
+    description: "Enhanced educational platform capabilities focusing on learner experience optimization and scalable feature development for improved learning outcomes.",
+    highlights: [
+      {
+        icon: <Award className="w-3 h-3 text-white" />,
+        title: "Learning Experience",
+        description: "Optimized learner journey resulting in improved completion rates and satisfaction"
+      },
+      {
+        icon: <Target className="w-3 h-3 text-white" />,
+        title: "Platform Scalability",
+        description: "Developed scalable solutions to handle growing user base and content delivery"
+      },
+      {
+        icon: <Lightbulb className="w-3 h-3 text-white" />,
+        title: "Innovation Focus",
+        description: "Introduced innovative features that enhanced the overall educational experience"
+      }
+    ],
+    skills: ["EdTech", "Product Development", "User Experience", "Scalability", "Platform Optimization"]
   }
 ];
 

@@ -177,11 +177,11 @@
   }
 }
 
-/* Card slide animations */
+/* Card slide animations - Enhanced for visible movement */
 @keyframes card-slide-up {
   from {
     opacity: 0;
-    transform: translateY(50px) scale(0.95);
+    transform: translateY(80px) scale(0.9);
   }
   to {
     opacity: 1;
@@ -192,22 +192,33 @@
 @keyframes card-slide-left {
   from {
     opacity: 0;
-    transform: translateX(-50px) rotate(-2deg);
+    transform: translateX(-100px) rotate(-5deg) scale(0.8);
   }
   to {
     opacity: 1;
-    transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg) scale(1);
   }
 }
 
 @keyframes card-slide-right {
   from {
     opacity: 0;
-    transform: translateX(50px) rotate(2deg);
+    transform: translateX(100px) rotate(5deg) scale(0.8);
   }
   to {
     opacity: 1;
-    transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes card-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -239,17 +250,43 @@
   animation: glow 2s ease-in-out infinite;
 }
 
-/* Card slide animations */
+/* Card slide animations - More visible and dramatic */
 .card-slide-in {
-  animation: card-slide-up 0.8s ease-out forwards;
-}
-
-.card-slide-in:nth-child(even) {
-  animation: card-slide-left 0.8s ease-out forwards;
+  opacity: 0;
+  animation: card-slide-up 1s ease-out forwards;
 }
 
 .card-slide-in:nth-child(odd) {
-  animation: card-slide-right 0.8s ease-out forwards;
+  animation: card-slide-left 1s ease-out forwards;
+}
+
+.card-slide-in:nth-child(even) {
+  animation: card-slide-right 1s ease-out forwards;
+}
+
+.card-slide-in:nth-child(3n) {
+  animation: card-slide-down 1s ease-out forwards;
+}
+
+/* Different animation delays for staggered effect */
+.card-slide-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card-slide-in:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card-slide-in:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card-slide-in:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.card-slide-in:nth-child(5) {
+  animation-delay: 0.5s;
 }
 
 /* Smooth scrolling */

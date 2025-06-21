@@ -14,10 +14,10 @@ type Experience = {
 const EXPERIENCES: Experience[] = [
   {
     company: "Incred Financial Services",
-    role: "Tech Support PM",
+    role: "Product Analyst Tech",
     period: "May 2025 – Present",
     description:
-      "Working as a Tech Support PM to identify issues from root cause and make the application process error-free, bringing direct impact on reduced application times and faster loan disbursals.",
+      "Working as a Product Analyst Tech to identify issues from root cause and make the application process error-free, bringing direct impact on reduced application times and faster loan disbursals.",
     achievements: [
       {
         text: "Identifying root cause issues to streamline application processes and reduce processing times.",
@@ -197,7 +197,7 @@ export function ExperienceTimeline({
         
         <div className="flex flex-col gap-4 sm:gap-5">
           {EXPERIENCES.map((exp, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-card/60 to-blue-50/30 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition-all duration-300 hover:shadow-xl animate-fade-in card-slide-in" style={{animationDelay: `${idx * 0.1}s`}}>
+            <div key={idx} className="bg-gradient-to-br from-card/60 to-blue-50/30 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition-all duration-300 hover:shadow-xl card-slide-in" style={{animationDelay: `${idx * 0.1}s`}}>
               <div className="flex flex-col gap-2 pb-2 border-b mb-2">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">

@@ -1,6 +1,6 @@
-
 import { SkillTag } from "./SkillTag";
 import { Briefcase } from "lucide-react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 type Experience = {
   company: string;
@@ -173,6 +173,43 @@ const SKILL_DESCRIPTIONS: { [skill: string]: string } = {
   "Product Roadmap": "Strategic planning and prioritization of product features and initiatives over time"
 };
 
+function ExperienceCard({ exp, idx }: { exp: Experience; idx: number }) {
+  const { ref, isVisible } = useScrollAnimation();
+  
+  return (
+    <div 
+      ref={ref}
+      className={`bg-gradient-to-br from-card/60 to-blue-50/30 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition-all duration-300 hover:shadow-xl ${
+        isVisible ? 'card-slide-in' : 'opacity-0'
+      }`} 
+      style={{animationDelay: `${idx * 0.1}s`}}
+    >
+      <div className="flex flex-col gap-2 pb-2 border-b mb-2">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+            <span className="font-semibold text-base sm:text-lg text-primary">{exp.role}</span>
+            <div className="flex items-center">
+              <span className="text-muted-foreground text-sm sm:text-base">@</span>
+              <a 
+                href={exp.company === "Lifesight" ? "https://lifesight.io" : exp.company === "Gauge" ? "https://gauge.ro" : "#"} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-medium text-indigo-700 hover:underline ml-1 text-sm sm:text-base transition-colors hover:text-indigo-900"
+              >
+                {exp.company}
+              </a>
+            </div>
+          </div>
+          <span className="text-xs text-indigo-400 font-medium bg-indigo-50 px-2 py-1 rounded-full">{exp.period}</span>
+        </div>
+      </div>
+      <div className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+        {exp.description}
+      </div>
+    </div>
+  );
+}
+
 export function ExperienceTimeline({
   selectedSkill,
   setSelectedSkill,
@@ -197,30 +234,7 @@ export function ExperienceTimeline({
         
         <div className="flex flex-col gap-4 sm:gap-5">
           {EXPERIENCES.map((exp, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-card/60 to-blue-50/30 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition-all duration-300 hover:shadow-xl card-slide-in" style={{animationDelay: `${idx * 0.1}s`}}>
-              <div className="flex flex-col gap-2 pb-2 border-b mb-2">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <span className="font-semibold text-base sm:text-lg text-primary">{exp.role}</span>
-                    <div className="flex items-center">
-                      <span className="text-muted-foreground text-sm sm:text-base">@</span>
-                      <a 
-                        href={exp.company === "Lifesight" ? "https://lifesight.io" : exp.company === "Gauge" ? "https://gauge.ro" : "#"} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="font-medium text-indigo-700 hover:underline ml-1 text-sm sm:text-base transition-colors hover:text-indigo-900"
-                      >
-                        {exp.company}
-                      </a>
-                    </div>
-                  </div>
-                  <span className="text-xs text-indigo-400 font-medium bg-indigo-50 px-2 py-1 rounded-full">{exp.period}</span>
-                </div>
-              </div>
-              <div className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                {exp.description}
-              </div>
-            </div>
+            <ExperienceCard key={idx} exp={exp} idx={idx} />
           ))}
         </div>
       </div>

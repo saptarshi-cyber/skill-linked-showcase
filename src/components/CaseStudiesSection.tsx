@@ -1,261 +1,111 @@
+import { BookOpen, ExternalLink, ArrowRight, Lightbulb, Target, TrendingUp } from "lucide-react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
-import { useState } from "react";
-import { ChevronDown, ChevronUp, BookOpenCheck } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+function CaseStudyCard({ study, idx }: { study: any; idx: number }) {
+  const { ref, isVisible } = useScrollAnimation();
+  
+  return (
+    <div 
+      ref={ref}
+      className={`group bg-gradient-to-br from-purple-50 via-white to-indigo-50/30 rounded-2xl border border-purple-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] overflow-hidden ${
+        isVisible ? 'card-slide-in' : 'opacity-0'
+      }`}
+      style={{animationDelay: `${idx * 0.15}s`}}
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(139,69,19,0.1),transparent_50%)]" />
+      
+      <div className="relative z-10 p-6 sm:p-8">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+            <BookOpen className="w-8 h-8 text-white" />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-gray-900">{study.title}</h3>
+            <div className="flex items-center gap-2 text-purple-600 mb-3">
+              <span className="text-sm font-medium">{study.company} • {study.period}</span>
+            </div>
+          </div>
+        </div>
+        
+        <p className="text-gray-600 mb-6 leading-relaxed">
+          {study.description}
+        </p>
+        
+        <div className="space-y-4 mb-6">
+          {study.highlights.map((highlight: any, idx: number) => (
+            <div key={idx} className="flex items-start gap-3">
+              <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                {highlight.icon}
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-1">{highlight.title}</h4>
+                <p className="text-sm text-gray-600">{highlight.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="flex flex-wrap gap-2 mb-6">
+          {study.skills.map((skill: string) => (
+            <span key={skill} className="px-3 py-1 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-xs font-medium border border-purple-200">
+              {skill}
+            </span>
+          ))}
+        </div>
+        
+        <a
+          href="mailto:saptarshi1799@gmail.com?subject=Case%20Study%20Discussion&body=Hi%20Saptarshi%2C%0A%0AI%27d%20love%20to%20discuss%20your%20case%20studies%20in%20detail.%20When%20would%20be%20a%20good%20time%20to%20chat%3F%0A%0AThanks%21"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+        >
+          <span>Let's discuss this case study</span>
+          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+    </div>
+  );
+}
 
-type CaseStudy = {
-  title: string;
-  problemStatement: React.ReactNode;
-  solutionSummary: React.ReactNode;
-  analysis: React.ReactNode;
-};
-
-type RelevelCaseStudy = {
-  title: string;
-  description: string;
-};
-
-const RELEVEL_CASE_STUDIES: RelevelCaseStudy[] = [
+const CASE_STUDIES = [
   {
-    title: "Uber Ride Fare Split Feature",
-    description: "Designed a comprehensive PRD for implementing fare splitting functionality in the Uber app, focusing on user experience and payment flow optimization."
-  },
-  {
-    title: "Khatabook Onboarding Flow",
-    description: "Built a detailed PRD for streamlining the user onboarding experience, reducing friction and improving user activation rates."
-  },
-  {
-    title: "E-commerce Shopping Cart Button",
-    description: "Designed user-centric shopping cart functionality enabling multi-product review before checkout, enhancing conversion rates."
-  },
-  {
-    title: "Grocery App Growth Strategy",
-    description: "Developed comprehensive go-to-market strategy including feature identification, user targeting, and marketing planning for grocery app adoption."
-  },
-  {
-    title: "Trade with Tribe - Stock Market Platform",
-    description: "Conceptualized a verified expert-driven stock market platform with gamified learning elements and premium content strategy."
-  },
-  {
-    title: "Organic Food Product Vision Board",
-    description: "Created strategic product vision for premium organic ready-to-eat food brand, defining market positioning and brand identity."
-  },
-  {
-    title: "E-commerce Roadmap Prioritization",
-    description: "Analyzed and prioritized quarterly product requirements using strategic frameworks to optimize resource allocation and impact."
-  },
-  {
-    title: "Flipkart Growth Analysis",
-    description: "Conducted comprehensive research on Flipkart's growth journey, identifying key growth hacks and suggesting future growth strategies."
+    title: "Platform Integration & Automation",
+    company: "Lifesight",
+    period: "2023-2025",
+    description: "Led comprehensive platform integration strategy that contributed to 33% of total integrations while reducing operational costs through intelligent automation.",
+    highlights: [
+      {
+        icon: <Lightbulb className="w-3 h-3 text-white" />,
+        title: "Smart Integration Strategy",
+        description: "Developed R/ETL workflows for major CRMs, E-commerce platforms, and Ad networks"
+      },
+      {
+        icon: <Target className="w-3 h-3 text-white" />,
+        title: "Cost Optimization",
+        description: "Implemented automated sanity checks reducing cloud costs by 50% for repetitive tasks"
+      },
+      {
+        icon: <TrendingUp className="w-3 h-3 text-white" />,
+        title: "Enhanced Adoption",
+        description: "Launched Custom API feature improving adoptability by 15% for bespoke data sources"
+      }
+    ],
+    skills: ["ETL", "Integration", "Google Cloud", "Automation", "API Development", "Cost Optimization"]
   }
 ];
 
-const CASE_STUDIES: CaseStudy[] = [
-  {
-    title: "HealthifyMe Funnel & Slot Optimization",
-    problemStatement: (
-      <div>
-        <strong>Problem Statement:</strong>
-        <ul className="list-disc ml-6 text-sm mt-2">
-          <li>
-            Dataset: Free user bookings with coaches, with funnel (Bot/Free-Trial), lead type (Medical/NRI), sales ability (Target Class A-D), booking and payment times.
-          </li>
-          <li>
-            Tasks included:
-            <ul className="list-inside list-disc ml-3">
-              <li>Analyze 3 & 7-day conversions by lead type and funnel.</li>
-              <li>Identify best hours for connectivity and sales.</li>
-              <li>Share actionable insights to optimize slots, coach allocation, and funnel for max conversion.</li>
-              <li>Draw any other useful data-driven conclusions.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    ),
-    solutionSummary: (
-      <div>
-        <strong>Solution Approach:</strong>
-        <ul className="list-disc ml-6 text-sm mb-3">
-          <li>
-            <b>Data Cleaning & Segmentation:</b> I mapped bookings by funnel, medical condition, and geography, then matched booking times to payment signals for measuring conversion windows.
-          </li>
-          <li>
-            <b>Conversion Analysis:</b> I calculated 3/7-day conversion rates for each segment, and visualized hourly booking and conversion patterns.
-          </li>
-          <li>
-            <b>Insights & Optimization:</b>
-            <ul className="list-inside list-disc ml-3">
-              <li>Bot funnel: High leads, but lower conversion rates. FT: Lower but much higher conversion. FT efficiency was 2-3x Bot funnel.</li>
-              <li>Mapped peak sales hours (India: 5–7PM & 8–10PM) to optimize coach allocation by class.</li>
-              <li>Formulated resource allocation model—assign best-selling coaches to peak/intense segments, scale FT lead quality, and test hybrid routing.</li>
-            </ul>
-          </li>
-          <li>
-            <b>Final Recommendations:</b>
-            <ul className="list-inside list-disc ml-3">
-              <li>Qualify Bot leads more strictly or reroute high-intent users to FT.</li>
-              <li>Match the best coaches to peak slots and monitor underperforming slots real-time for rebalancing.</li>
-              <li>I also detail real-time monitoring and rebalance strategies.</li>
-            </ul>
-          </li>
-        </ul>
-        <div className="flex flex-wrap gap-4 text-xs mt-2">
-          <a
-            className="underline text-indigo-700 hover:opacity-80 transition"
-            href="https://docs.google.com/spreadsheets/d/1P-PvipHVrNEgHWLxkJvxMJEvFVvWAddb/edit?gid=2134676910#gid=2134676910"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            CSV with detailed analysis
-          </a>
-          <a
-            className="underline text-indigo-700 hover:opacity-80 transition"
-            href="https://colab.research.google.com/drive/1uEkeRNHO-E_G5dklpjZ7ZT5huj8ot6nB?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Notebook (sample)
-          </a>
-          <a
-            className="underline text-indigo-700 hover:opacity-80 transition"
-            href="https://docs.google.com/document/d/1GgYT1CzYBnm3r4il8F87Nvx1QwDsgors/edit?usp=sharing&ouid=112716720863127862961&rtpof=true&sd=true"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Full writeup (Google Doc)
-          </a>
-        </div>
-      </div>
-    ),
-    analysis: (
-      <div>
-        <strong>Reflection & Takeaways:</strong>
-        <ul className="list-disc ml-6 text-sm mt-1">
-          <li>
-            <b>Analytical Depth:</b> I went beyond simple statistics and applied careful segmentation, time-windowed conversion analysis, and cohort breakdowns to understand what's really happening.
-          </li>
-          <li>
-            <b>Product Thinking:</b> My recommendations focused on practical solutions—resource allocation models, peak-hour rebalancing, and evolving funnel design.
-          </li>
-          <li>
-            <b>User-First Mindset:</b> I targeted my optimizations at minimizing friction and surfacing high-intent users for the team, rather than just maximizing numbers.
-          </li>
-          <li>
-            <b>Strategic Impact:</b> This exercise highlights how I combine quantitative skill and product intuition to frame insights teams can actually build on.
-          </li>
-          <li>
-            <span className="italic">
-              If you have challenges like this—I'd love to explore them with you!
-            </span>
-          </li>
-        </ul>
-      </div>
-    ),
-  },
-];
-
 export function CaseStudiesSection() {
-  const [openStates, setOpenStates] = useState<boolean[]>(new Array(CASE_STUDIES.length).fill(false));
-
-  const toggleCase = (index: number) => {
-    setOpenStates(prev => prev.map((state, i) => i === index ? !state : state));
-  };
-
   return (
-    <section id="case-studies" className="max-w-5xl mx-auto py-4 px-4 sm:px-6">
-      <div className="relative overflow-hidden">
-        {/* Floating background elements */}
-        <div className="absolute top-0 left-1/4 w-32 h-32 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full opacity-30 animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-25 animate-bounce" style={{animationDelay: '2s'}} />
-        
-        <div className="relative z-10">
-          <h2 className="text-3xl font-bold text-primary flex items-center gap-2 mb-6 animate-fade-in">
-            <BookOpenCheck size={22} className="animate-pulse" /> 
-            Case Studies
-          </h2>
-          
-          <div className="grid md:grid-cols-1 gap-6 mb-8">
-            {CASE_STUDIES.map((cs, idx) => (
-              <Card key={idx} className="group transition-all duration-300 hover:shadow-xl hover:scale-[1.02] bg-gradient-to-br from-white to-blue-50/30 border-0 shadow-lg animate-fade-in" style={{animationDelay: `${idx * 0.1}s`}}>
-                <Collapsible open={openStates[idx]} onOpenChange={() => toggleCase(idx)}>
-                  <CollapsibleTrigger asChild>
-                    <CardHeader className="cursor-pointer hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-300 rounded-t-lg">
-                      <div className="flex items-center gap-2 justify-between">
-                        <CardTitle className="text-lg text-indigo-800 group-hover:text-indigo-900 transition-colors">
-                          {cs.title}
-                        </CardTitle>
-                        <div className="transform transition-transform duration-300 group-hover:scale-110">
-                          {openStates[idx] ? (
-                            <ChevronUp className="text-indigo-400" />
-                          ) : (
-                            <ChevronDown className="text-indigo-400" />
-                          )}
-                        </div>
-                      </div>
-                      <CardDescription className="text-left">
-                        {cs.problemStatement}
-                      </CardDescription>
-                    </CardHeader>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="animate-accordion-down">
-                    <CardContent className="pt-0 border-t border-border/50">
-                      <div className="mt-4 space-y-4">
-                        <div className="animate-fade-in">{cs.solutionSummary}</div>
-                        <div className="animate-fade-in" style={{animationDelay: '0.1s'}}>{cs.analysis}</div>
-                      </div>
-                    </CardContent>
-                  </CollapsibleContent>
-                </Collapsible>
-              </Card>
-            ))}
-          </div>
-
-          {/* Relevel Case Studies Section */}
-          <div className="mt-10 animate-fade-in" style={{animationDelay: '0.3s'}}>
-            <Card className="bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 border-indigo-200 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] relative overflow-hidden">
-              {/* Animated background pattern */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)] animate-pulse" />
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-purple-100 to-transparent rounded-full opacity-50 animate-bounce" style={{animationDelay: '1s'}} />
-              
-              <CardHeader className="relative z-10">
-                <CardTitle className="text-xl text-indigo-900 flex items-center gap-2">
-                  <BookOpenCheck size={20} className="animate-pulse" />
-                  Relevel Case Studies - Foundation Building (2022)
-                </CardTitle>
-                <CardDescription className="text-indigo-700">
-                  During my time at Relevel, I solved numerous product management case studies that helped build my foundational understanding of PM principles, strategic thinking, and practical problem-solving approaches.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="relative z-10">
-                <div className="grid md:grid-cols-2 gap-4">
-                  {RELEVEL_CASE_STUDIES.map((study, idx) => (
-                    <div key={idx} className="bg-white/70 backdrop-blur-sm rounded-lg p-4 border border-indigo-100 hover:bg-white/80 transition-all duration-300 hover:scale-105 hover:shadow-md animate-fade-in" style={{animationDelay: `${idx * 0.05}s`}}>
-                      <h4 className="font-semibold text-sm text-indigo-800 mb-2">{study.title}</h4>
-                      <p className="text-xs text-muted-foreground leading-relaxed">{study.description}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 pt-4 border-t border-indigo-200">
-                  <p className="text-sm text-indigo-700 mb-3">
-                    <strong>Key Learnings:</strong> These case studies helped me develop core PM skills including PRD writing, user research, strategic prioritization, growth hacking, and cross-functional collaboration.
-                  </p>
-                  <div className="bg-indigo-100/50 rounded-lg p-3 border border-indigo-200">
-                    <p className="text-sm text-indigo-800 font-medium">
-                      💡 Interested in detailed solutions? 
-                      <a 
-                        href="mailto:saptarshi1799@gmail.com?subject=Request%20Relevel%20Case%20Study%20Solutions&body=Hi%20Saptarshi%2C%0A%0AI%27d%20love%20to%20see%20your%20detailed%20solutions%20for%20the%20Relevel%20case%20studies.%20Could%20you%20please%20share%20them%3F%0A%0AThanks%21"
-                        className="ml-1 underline text-indigo-700 hover:text-indigo-900 transition-colors font-semibold"
-                      >
-                        Request them here
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+    <section id="case-studies" className="max-w-6xl mx-auto my-6 sm:my-8 px-4 sm:px-6">
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
+        <BookOpen size={24} className="sm:hidden text-purple-600" />
+        <BookOpen size={28} className="hidden sm:block text-purple-600" />
+        Case Studies
+        <span className="text-xs sm:text-sm text-muted-foreground ml-2 sm:ml-3">— detailed insights</span>
+      </h2>
+      
+      <div className="grid gap-6 sm:gap-8">
+        {CASE_STUDIES.map((study, idx) => (
+          <CaseStudyCard key={idx} study={study} idx={idx} />
+        ))}
       </div>
     </section>
   );

@@ -10,8 +10,25 @@ type Experience = {
   achievements: { text: string; skills: string[] }[];
 };
 
-// Updated with data from the user's resume and message
+// Updated with data from the user's resume and message, including new Incred experience
 const EXPERIENCES: Experience[] = [
+  {
+    company: "Incred Financial Services",
+    role: "Tech Support PM",
+    period: "May 2025 – Present",
+    description:
+      "Working as a Tech Support PM to identify issues from root cause and make the application process error-free, bringing direct impact on reduced application times and faster loan disbursals.",
+    achievements: [
+      {
+        text: "Identifying root cause issues to streamline application processes and reduce processing times.",
+        skills: ["Problem Solving", "Process Improvement", "Requirements Analysis"],
+      },
+      {
+        text: "Working to eliminate application errors for faster loan disbursals and improved user experience.",
+        skills: ["User Research", "Product Development", "Cross-Team Collaboration"],
+      },
+    ],
+  },
   {
     company: "Lifesight",
     role: "Product Analyst",
@@ -175,12 +192,12 @@ export function ExperienceTimeline({
           Experience
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed animate-fade-in" style={{animationDelay: '0.1s'}}>
-          The highlight reel—key wins and impact moments. For the complete story, feel free to <a href="mailto:saptarshi1799@gmail.com?subject=Request%20Resume&body=Hey%2C%20can%20I%20take%20a%20look%20at%20your%20resume%3F" className="underline text-indigo-700 hover:opacity-80 transition-opacity">request my resume</a>.
+          To view detailed experience, please download the resume. This is just a summary text.
         </p>
         
         <div className="flex flex-col gap-4 sm:gap-5">
           {EXPERIENCES.map((exp, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-card/60 to-blue-50/30 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition-all duration-300 hover:shadow-xl animate-fade-in" style={{animationDelay: `${idx * 0.1}s`}}>
+            <div key={idx} className="bg-gradient-to-br from-card/60 to-blue-50/30 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition-all duration-300 hover:shadow-xl animate-fade-in card-slide-in" style={{animationDelay: `${idx * 0.1}s`}}>
               <div className="flex flex-col gap-2 pb-2 border-b mb-2">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
@@ -188,7 +205,7 @@ export function ExperienceTimeline({
                     <div className="flex items-center">
                       <span className="text-muted-foreground text-sm sm:text-base">@</span>
                       <a 
-                        href={exp.company === "Lifesight" ? "https://lifesight.io" : "https://gauge.ro"} 
+                        href={exp.company === "Lifesight" ? "https://lifesight.io" : exp.company === "Gauge" ? "https://gauge.ro" : "#"} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="font-medium text-indigo-700 hover:underline ml-1 text-sm sm:text-base transition-colors hover:text-indigo-900"

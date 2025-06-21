@@ -11,7 +11,7 @@ export function ProjectShowcase() {
         <span className="text-xs sm:text-sm text-muted-foreground ml-2 sm:ml-3">— more coming soon</span>
       </h2>
       <div className="grid gap-4 sm:gap-6 mt-4 sm:mt-5 sm:grid-cols-2">
-        <div className="group rounded-xl border border-border bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] relative min-h-[140px] sm:min-h-[150px] flex items-center justify-center">
+        <div className="group rounded-xl border border-border bg-gradient-to-br from-orange-50 via-white to-orange-50/30 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] relative min-h-[140px] sm:min-h-[150px] flex items-center justify-center card-slide-in">
           <img
             src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=550&q=80"
             alt="AI agent development"
@@ -31,10 +31,16 @@ export function ProjectShowcase() {
             </span>
           </div>
         </div>
-        <div className="rounded-xl border-2 border-dashed border-indigo-300 bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center min-h-[140px] sm:min-h-[150px] hover:bg-gradient-to-br hover:from-indigo-100 hover:to-purple-100 transition-all duration-300 group">
+        <div className="rounded-xl border-2 border-dashed border-indigo-300 bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center min-h-[140px] sm:min-h-[150px] hover:bg-gradient-to-br hover:from-indigo-100 hover:to-purple-100 transition-all duration-300 group card-slide-in">
           <div className="text-center px-4">
-            <Sparkles className="w-8 h-8 text-indigo-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
-            <span className="text-indigo-500 font-semibold text-xs sm:text-sm opacity-70">More exciting projects coming soon…</span>
+            <Sparkles className="w-8 h-8 text-indigo-400 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-indigo-500 font-semibold text-xs sm:text-sm opacity-70 mb-4 block">More exciting projects coming soon…</span>
+            <a
+              href="mailto:saptarshi1799@gmail.com?subject=Let's%20Build%20Together&body=Hi%20Saptarshi%2C%0A%0AI%27m%20interested%20in%20collaborating%20on%20a%20project%20with%20you.%20Let%27s%20discuss%21%0A%0AThanks%21"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm"
+            >
+              <span>I'm interested, let's build together!</span>
+            </a>
           </div>
         </div>
       </div>

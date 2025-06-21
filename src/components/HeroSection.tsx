@@ -12,7 +12,7 @@ export function HeroSection() {
       <div className="absolute top-20 right-20 w-12 h-12 bg-gradient-to-br from-blue-200 to-indigo-200 rounded-full opacity-35 animate-pulse hidden sm:block" style={{animationDelay: '1s'}} />
       <div className="absolute bottom-20 left-20 w-14 h-14 bg-gradient-to-br from-cyan-200 to-blue-200 rounded-full opacity-25 animate-bounce hidden sm:block" style={{animationDelay: '2s'}} />
       
-      <div className="relative z-10 flex flex-col items-center gap-6 sm:gap-8 max-w-5xl w-full px-4 sm:px-6">
+      <div className="relative z-10 flex flex-col items-center gap-6 sm:gap-8 max-w-5xl w-full px-4 sm:px-6 opacity-0 animate-scale-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
         <div className="relative group">
           <img
             src="/lovable-uploads/5054563e-8f51-4e2d-b8df-22db7b1a8eda.png"

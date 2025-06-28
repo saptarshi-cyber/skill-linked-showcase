@@ -1,10 +1,11 @@
-
 // Google Analytics utility functions
 declare global {
   interface Window {
     gtag: (command: string, targetId: string, config?: any) => void;
   }
 }
+
+import { trackButtonClick as mixpanelTrackButtonClick, trackSectionView as mixpanelTrackSectionView } from './mixpanel';
 
 export const GA_MEASUREMENT_ID = 'G-QCX3G9KSPC';
 
@@ -33,12 +34,20 @@ export const trackEvent = (
   }
 };
 
-// Track button clicks
+// Track button clicks (now includes both GA and Mixpanel)
 export const trackButtonClick = (buttonName: string, location: string) => {
+  // Google Analytics
   trackEvent('click', 'engagement', `${buttonName} - ${location}`);
+  
+  // Mixpanel
+  mixpanelTrackButtonClick(buttonName, location);
 };
 
-// Track section views
+// Track section views (now includes both GA and Mixpanel)
 export const trackSectionView = (sectionName: string) => {
+  // Google Analytics
   trackEvent('view', 'engagement', `Section: ${sectionName}`);
+  
+  // Mixpanel
+  mixpanelTrackSectionView(sectionName);
 };

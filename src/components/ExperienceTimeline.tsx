@@ -1,6 +1,6 @@
-
 import { SkillTag } from "./SkillTag";
 import { Briefcase } from "lucide-react";
+import { useScrollCardAnimation } from "@/hooks/useScrollCardAnimation";
 
 type Experience = {
   company: string;
@@ -197,34 +197,49 @@ export function ExperienceTimeline({
         
         <div className="flex flex-col gap-4 sm:gap-5">
           {EXPERIENCES.map((exp, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-card/60 to-blue-50/30 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition-all duration-300 hover:shadow-xl card-slide-in" style={{animationDelay: `${idx * 0.1}s`}}>
-              <div className="flex flex-col gap-2 pb-2 border-b mb-2">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <span className="font-semibold text-base sm:text-lg text-primary">{exp.role}</span>
-                    <div className="flex items-center">
-                      <span className="text-muted-foreground text-sm sm:text-base">@</span>
-                      <a 
-                        href={exp.company === "Lifesight" ? "https://lifesight.io" : exp.company === "Gauge" ? "https://gauge.ro" : "#"} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="font-medium text-indigo-700 hover:underline ml-1 text-sm sm:text-base transition-colors hover:text-indigo-900"
-                      >
-                        {exp.company}
-                      </a>
-                    </div>
-                  </div>
-                  <span className="text-xs text-indigo-400 font-medium bg-indigo-50 px-2 py-1 rounded-full">{exp.period}</span>
-                </div>
-              </div>
-              <div className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                {exp.description}
-              </div>
-            </div>
+            <ScrollAnimatedCard key={idx} index={idx} experience={exp} />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ScrollAnimatedCard({ experience, index }: { experience: any; index: number }) {
+  const { elementRef, transform } = useScrollCardAnimation();
+  
+  return (
+    <div 
+      ref={elementRef}
+      className="bg-gradient-to-br from-card/60 to-blue-50/30 border border-border shadow-lg rounded-xl px-4 sm:px-6 py-4 sm:py-5 hover:scale-[1.01] transition-all duration-500 hover:shadow-xl"
+      style={{
+        transform,
+        transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease-out',
+      }}
+    >
+      <div className="flex flex-col gap-2 pb-2 border-b mb-2">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+            <span className="font-semibold text-base sm:text-lg text-primary">{experience.role}</span>
+            <div className="flex items-center">
+              <span className="text-muted-foreground text-sm sm:text-base">@</span>
+              <a 
+                href={experience.company === "Lifesight" ? "https://lifesight.io" : experience.company === "Gauge" ? "https://gauge.ro" : "#"} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-medium text-indigo-700 hover:underline ml-1 text-sm sm:text-base transition-colors hover:text-indigo-900"
+              >
+                {experience.company}
+              </a>
+            </div>
+          </div>
+          <span className="text-xs text-indigo-400 font-medium bg-indigo-50 px-2 py-1 rounded-full">{experience.period}</span>
+        </div>
+      </div>
+      <div className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+        {experience.description}
+      </div>
+    </div>
   );
 }
 

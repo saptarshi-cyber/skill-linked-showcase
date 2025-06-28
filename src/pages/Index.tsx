@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Header } from "../components/Header";
 import { HeroSection } from "../components/HeroSection";
@@ -9,6 +8,7 @@ import { ProjectShowcase } from "../components/ProjectShowcase";
 import { AboutBlock } from "../components/AboutBlock";
 import { CertificationsSection } from "../components/CertificationsSection";
 import { ALL_SKILLS } from "../components/ExperienceTimeline";
+import { trackPageView, trackCustomEvent } from "../utils/mixpanel";
 
 const sectionSpacing = "py-6 sm:py-8 lg:py-10";
 
@@ -20,6 +20,16 @@ const Index = () => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Track page load and test Mixpanel connection
+  useEffect(() => {
+    console.log('Page loaded, tracking events...');
+    trackPageView('Portfolio Home');
+    trackCustomEvent('Portfolio Loaded', { 
+      user_agent: navigator.userAgent,
+      timestamp: new Date().toISOString()
+    });
   }, []);
 
   return (

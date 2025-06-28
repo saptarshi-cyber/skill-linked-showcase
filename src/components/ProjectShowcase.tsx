@@ -1,7 +1,12 @@
 
 import { FileText, Sparkles } from "lucide-react";
+import { trackButtonClick } from "@/utils/analytics";
 
 export function ProjectShowcase() {
+  const handleCollaborationClick = () => {
+    trackButtonClick('Collaboration Request', 'Projects');
+  };
+
   return (
     <section id="projects" className="my-4 sm:my-6 max-w-5xl mx-auto px-4 sm:px-6">
       <h2 className="text-2xl sm:text-3xl font-bold text-primary flex items-center gap-2 mb-1">
@@ -38,6 +43,7 @@ export function ProjectShowcase() {
             <a
               href="mailto:saptarshi1799@gmail.com?subject=Let's%20Build%20Together&body=Hi%20Saptarshi%2C%0A%0AI%27m%20interested%20in%20collaborating%20on%20a%20project%20with%20you.%20Let%27s%20discuss%21%0A%0AThanks%21"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm"
+              onClick={handleCollaborationClick}
             >
               <span>I'm interested, let's build together!</span>
             </a>

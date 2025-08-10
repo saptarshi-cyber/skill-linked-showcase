@@ -31,8 +31,8 @@ function ScrollAnimatedCertCard({ type }: { type: 'featured' | 'python' | 'sql' 
           <div className="lg:col-span-2 group">
             <div className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50/30 rounded-2xl shadow-lg border border-orange-100 p-6 sm:p-8 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
               {/* Background Pattern */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(251,146,60,0.1),transparent_50%)]" />
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-200/30 to-transparent rounded-full transform translate-x-8 -translate-y-8" />
+              <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_70%_20%,rgba(251,146,60,0.1),transparent_50%)]" />
+              <div className="absolute pointer-events-none top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-200/30 to-transparent rounded-full transform translate-x-8 -translate-y-8" />
               
               <div className="relative z-10 flex items-start gap-4 sm:gap-6">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -82,8 +82,8 @@ function ScrollAnimatedCertCard({ type }: { type: 'featured' | 'python' | 'sql' 
       
       case 'python':
         return (
-          <div className="bg-gradient-to-br from-blue-50 via-white to-blue-50/30 rounded-2xl shadow-lg border border-blue-100 p-6 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.1),transparent_50%)]" />
+          <div className="relative bg-gradient-to-br from-blue-50 via-white to-blue-50/30 rounded-2xl shadow-lg border border-blue-100 p-6 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
+            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.1),transparent_50%)]" />
             <div className="relative z-10">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -115,8 +115,8 @@ function ScrollAnimatedCertCard({ type }: { type: 'featured' | 'python' | 'sql' 
       
       case 'sql':
         return (
-          <div className="bg-gradient-to-br from-indigo-50 via-white to-indigo-50/30 rounded-2xl shadow-lg border border-indigo-100 p-6 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(99,102,241,0.1),transparent_50%)]" />
+          <div className="relative bg-gradient-to-br from-indigo-50 via-white to-indigo-50/30 rounded-2xl shadow-lg border border-indigo-100 p-6 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
+            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_70%_30%,rgba(99,102,241,0.1),transparent_50%)]" />
             <div className="relative z-10">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -149,8 +149,8 @@ function ScrollAnimatedCertCard({ type }: { type: 'featured' | 'python' | 'sql' 
       case 'google':
         return (
           <div className="lg:col-span-2">
-            <div className="bg-gradient-to-br from-red-50 via-white to-red-50/30 rounded-2xl shadow-lg border border-red-100 p-6 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(239,68,68,0.1),transparent_50%)]" />
+            <div className="relative bg-gradient-to-br from-red-50 via-white to-red-50/30 rounded-2xl shadow-lg border border-red-100 p-6 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
+              <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_50%,rgba(239,68,68,0.1),transparent_50%)]" />
               <div className="relative z-10 flex items-start gap-4 sm:gap-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                   <span className="text-2xl font-bold text-white">G</span>

@@ -16,10 +16,16 @@ export function AboutBlock() {
           
           <div className="space-y-3 sm:space-y-4 text-gray-700">
             <p className="text-base sm:text-lg leading-relaxed">
-              Aspiring Associate Product Manager with strong product analytics foundation. Holds experience with collaborating across
-              teams to deliver impact. Worked in B2B SaaS while delivering high value solutions to multiple stakeholders, including direct
-              collaboration with a founder to build product foundations. Adept at bridging technical & business needs, with skills in data &
-              product analytics, and cross-functional tools. Eager to grow and support teams with practical, cross-functional experience.
+              I'm an aspiring <span className="font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Associate Product Manager</span> with a passion for turning data into actionable insights that teams actually use.
+            </p>
+            <p className="text-base sm:text-lg leading-relaxed">
+              My background in B2B SaaS has taught me how to collaborate across teams and deliver high-value solutions—I've even worked directly with founders to build product foundations from the ground up.
+            </p>
+            <p className="text-base sm:text-lg leading-relaxed">
+              I love bridging the gap between technical possibilities and business needs, using product analytics and cross-functional tools to help teams make better decisions.
+            </p>
+            <p className="text-base sm:text-lg leading-relaxed font-medium text-gray-800">
+              Ready to grow and support teams with practical, hands-on experience? Let's connect!
             </p>
           </div>
           

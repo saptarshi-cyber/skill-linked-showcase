@@ -16,16 +16,10 @@ export function AboutBlock() {
           
           <div className="space-y-3 sm:space-y-4 text-gray-700">
             <p className="text-base sm:text-lg leading-relaxed">
-              I turn <span className="font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">"what if…"</span> ideas into products people actually use (bonus points if it makes their job easier).
-            </p>
-            <p className="text-base sm:text-lg leading-relaxed">
-              I transform data confusion into clear insights—then help teams act on them with practical solutions.
-            </p>
-            <p className="text-base sm:text-lg leading-relaxed">
-              A natural empathizer with a knack for product development, relentlessly curious, and comfortable building bridges between technical teams and business needs.
-            </p>
-            <p className="text-base sm:text-lg leading-relaxed font-medium text-gray-800">
-              Looking for someone who connects user needs with technical possibilities? Let's chat!
+              Aspiring Associate Product Manager with strong product analytics foundation. Holds experience with collaborating across
+              teams to deliver impact. Worked in B2B SaaS while delivering high value solutions to multiple stakeholders, including direct
+              collaboration with a founder to build product foundations. Adept at bridging technical & business needs, with skills in data &
+              product analytics, and cross-functional tools. Eager to grow and support teams with practical, cross-functional experience.
             </p>
           </div>
           

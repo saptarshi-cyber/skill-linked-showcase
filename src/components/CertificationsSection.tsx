@@ -22,7 +22,6 @@ export function CertificationsSection() {
 }
 
 function ScrollAnimatedCertCard({ type }: { type: 'featured' | 'python' | 'sql' | 'google' }) {
-  const { elementRef, transform } = useScrollCardAnimation();
 
   const getCardContent = () => {
     switch (type) {
@@ -204,13 +203,7 @@ function ScrollAnimatedCertCard({ type }: { type: 'featured' | 'python' | 'sql' 
   };
 
   return (
-    <div 
-      ref={elementRef}
-      style={{
-        transform,
-        transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease-out',
-      }}
-    >
+    <div className="animate-fade-in">
       {getCardContent()}
     </div>
   );

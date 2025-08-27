@@ -10,7 +10,7 @@ import { CertificationsSection } from "../components/CertificationsSection";
 import { ALL_SKILLS } from "../components/ExperienceTimeline";
 import { trackPageView, trackCustomEvent } from "../utils/mixpanel";
 
-const sectionSpacing = "py-6 sm:py-8 lg:py-10";
+const sectionSpacing = "py-3 sm:py-4 lg:py-5";
 
 const Index = () => {
   const [selectedSkill, setSelectedSkill] = useState<string | undefined>(ALL_SKILLS[0]);

@@ -192,7 +192,7 @@ export function ExperienceTimeline({
           Experience
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed animate-fade-in" style={{animationDelay: '0.1s'}}>
-          To view detailed experience, please download the resume. This is just a summary text.
+          Please request my resume in the link above.
         </p>
         
         <div className="flex flex-col gap-4 sm:gap-5">
